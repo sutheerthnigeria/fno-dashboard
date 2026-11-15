@@ -1,0 +1,214 @@
+sym,name,sector,industry,mcap_cat
+360ONE,360 One Wam Ltd.,Finance,Finance - Stock Broking,Mid Cap
+ABB,ABB India Ltd.,Capital Goods,Electric Equipment,Large Cap
+ABCAPITAL,Aditya Birla Capital Ltd.,Finance,Finance - NBFC,Mid Cap
+ADANIENSOL,Adani Energy Solutions Ltd.,Power,Power Generation/Distribution,Large Cap
+ADANIENT,Adani Enterprises Ltd.,Diversified,Diversified,Large Cap
+ADANIGREEN,Adani Green Energy Ltd.,Power,Power Generation/Distribution,Large Cap
+ADANIPORTS,Adani Ports and Special Economic Zone Ltd.,Logistics,Port,Large Cap
+ADANIPOWER,Adani Power Ltd.,Power,Power Generation/Distribution,Large Cap
+ALKEM,Alkem Laboratories Ltd.,Healthcare,Pharmaceuticals & Drugs,Mid Cap
+AMBER,Amber Enterprises India Ltd.,Consumer Durables,Air Conditioners,Small Cap
+AMBUJACEM,Ambuja Cements Ltd.,Construction Materials,Cement & Construction Materials,Large Cap
+ANANDRATHI,Anand Rathi Wealth Ltd.,Finance,Finance - Others,Small Cap
+ANGELONE,Angel One Ltd.,Finance,Finance - Stock Broking,Small Cap
+APLAPOLLO,APL Apollo Tubes Ltd.,Iron & Steel,Steel & Iron Products,Mid Cap
+APOLLOHOSP,Apollo Hospitals Enterprise Ltd.,Healthcare,Hospital & Healthcare Services,Large Cap
+ASHOKLEY,Ashok Leyland Ltd.,Automobile & Ancillaries,Automobiles-Trucks/Lcv,Mid Cap
+ASIANPAINT,Asian Paints Ltd.,Chemicals,Paints,Large Cap
+ASTRAL,Astral Ltd.,Plastic Products,Plastic Products,Mid Cap
+ATHERENERG,Ather Energy Ltd.,Automobile & Ancillaries,Automobile Two & Three Wheelers,Small Cap
+AUBANK,AU Small Finance Bank Ltd.,Banking,Bank - Private,Mid Cap
+AUROPHARMA,Aurobindo Pharma Ltd.,Healthcare,Pharmaceuticals & Drugs,Mid Cap
+AXISBANK,Axis Bank Ltd.,Banking,Bank - Private,Large Cap
+BAJAJ-AUTO,Bajaj Auto Ltd.,Automobile & Ancillaries,Automobile Two & Three Wheelers,Large Cap
+BAJAJFINSV,Bajaj Finserv Ltd.,Finance,Finance - Investment,Large Cap
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd.,Finance,Finance - NBFC,Large Cap
+BAJFINANCE,Bajaj Finance Ltd.,Finance,Finance - NBFC,Large Cap
+BANDHANBNK,Bandhan Bank Ltd.,Banking,Bank - Private,Small Cap
+BANKBARODA,Bank Of Baroda,Banking,Bank - Public,Large Cap
+BANKINDIA,Bank Of India,Banking,Bank - Public,Mid Cap
+BDL,Bharat Dynamics Ltd.,Capital Goods,Aerospace & Defense,Mid Cap
+BEL,Bharat Electronics Ltd.,Capital Goods,Aerospace & Defense,Large Cap
+BHARATFORG,Bharat Forge Ltd.,Automobile & Ancillaries,Forgings,Mid Cap
+BHARTIARTL,Bharti Airtel Ltd.,Telecom,Telecommunication - Service  Provider,Large Cap
+BHEL,Bharat Heavy Electricals Ltd.,Capital Goods,Engineering - Industrial Equipments,Large Cap
+BIOCON,Biocon Ltd.,Healthcare,Pharmaceuticals & Drugs,Mid Cap
+BLUESTARCO,Blue Star Ltd.,Consumer Durables,Air Conditioners,Mid Cap
+BOSCHLTD,Bosch Ltd.,Automobile & Ancillaries,Auto Ancillary,Mid Cap
+BPCL,Bharat Petroleum Corporation Ltd.,Crude Oil,Refineries,Large Cap
+BRITANNIA,Britannia Industries Ltd.,Fast Moving Consumer Goods,Consumer Food,Large Cap
+BSE,BSE Ltd.,Finance,Finance - Others,Large Cap
+CAMS,Computer Age Management Services Ltd.,Finance,Depository Services,Small Cap
+CANBK,Canara Bank,Banking,Bank - Public,Large Cap
+CDSL,Central Depository Services (India) Ltd.,Finance,Depository Services,Small Cap
+CGPOWER,CG Power and Industrial Solutions Ltd.,Capital Goods,Electric Equipment,Large Cap
+CHOLAFIN,Cholamandalam Investment and Finance Company Ltd.,Finance,Finance - NBFC,Large Cap
+CIPLA,Cipla Ltd.,Healthcare,Pharmaceuticals & Drugs,Large Cap
+COALINDIA,Coal India Ltd.,Mining,Mining & Minerals,Large Cap
+COCHINSHIP,Cochin Shipyard Ltd.,Ship Building,Ship Building,Mid Cap
+COFORGE,Coforge Ltd.,Information Technology,IT - Software,Mid Cap
+COLPAL,Colgate-Palmolive (India) Ltd.,Fast Moving Consumer Goods,Household & Personal Products,Mid Cap
+CONCOR,Container Corporation Of India Ltd.,Logistics,Logistics,Mid Cap
+CROMPTON,Crompton Greaves Consumer Electricals Ltd.,Consumer Durables,Consumer Durables - Domestic Appliances,Small Cap
+CUMMINSIND,Cummins India Ltd.,Automobile & Ancillaries,Diesel Engines,Large Cap
+DABUR,Dabur India Ltd.,Fast Moving Consumer Goods,Household & Personal Products,Mid Cap
+DELHIVERY,Delhivery Ltd.,Logistics,Logistics,Small Cap
+DIVISLAB,Divi's Laboratories Ltd.,Healthcare,Pharmaceuticals & Drugs,Large Cap
+DIXON,Dixon Technologies (India) Ltd.,Consumer Durables,Consumer Durables - Electronics,Mid Cap
+DLF,DLF Ltd.,Realty,Construction - Real Estate,Large Cap
+DMART,Avenue Supermarts Ltd.,Retailing,Retailing,Large Cap
+DRREDDY,Dr. Reddy's Laboratories Ltd.,Healthcare,Pharmaceuticals & Drugs,Mid Cap
+EICHERMOT,Eicher Motors Ltd.,Automobile & Ancillaries,Automobile Two & Three Wheelers,Large Cap
+ENRIN,Siemens Energy India Ltd.,Capital Goods,Electric Equipment,Mid Cap
+ETERNAL,Eternal Ltd.,Information Technology,e-Commerce,Large Cap
+FEDERALBNK,The Federal Bank Ltd.,Banking,Bank - Private,Mid Cap
+FORCEMOT,Force Motors Ltd.,Automobile & Ancillaries,Automobiles-Trucks/Lcv,Small Cap
+FORTIS,Fortis Healthcare Ltd.,Healthcare,Hospital & Healthcare Services,Mid Cap
+GAIL,GAIL (India) Ltd.,Gas Transmission,Gas Transmission/Marketing,Large Cap
+GLENMARK,Glenmark Pharmaceuticals Ltd.,Healthcare,Pharmaceuticals & Drugs,Mid Cap
+GMRAIRPORT,GMR Airports Ltd.,Aviation,Airport Management Services,Mid Cap
+GODFRYPHLP,Godfrey Phillips India Ltd.,Fast Moving Consumer Goods,Cigarettes/Tobacco,Mid Cap
+GODREJCP,Godrej Consumer Products Ltd.,Fast Moving Consumer Goods,Household & Personal Products,Large Cap
+GODREJPROP,Godrej Properties Ltd.,Realty,Construction - Real Estate,Mid Cap
+GRASIM,Grasim Industries Ltd.,Construction Materials,Cement & Construction Materials,Large Cap
+GVT&D,GE Vernova T&D India Ltd.,Capital Goods,Electric Equipment,Mid Cap
+HAL,Hindustan Aeronautics Ltd.,Capital Goods,Aerospace & Defense,Large Cap
+HAVELLS,Havells India Ltd.,Capital Goods,Electric Equipment,Mid Cap
+HCLTECH,HCL Technologies Ltd.,Information Technology,IT - Software,Large Cap
+HDFCAMC,HDFC Asset Management Company Ltd.,Finance,Finance - Asset Management,Large Cap
+HDFCBANK,HDFC Bank Ltd.,Banking,Bank - Private,Large Cap
+HDFCLIFE,HDFC Life Insurance Company Ltd.,Finance,Insurance,Large Cap
+HEROMOTOCO,Hero MotoCorp Ltd.,Automobile & Ancillaries,Automobile Two & Three Wheelers,Mid Cap
+HINDALCO,Hindalco Industries Ltd.,Non - Ferrous Metals,Metal - Non Ferrous,Large Cap
+HINDPETRO,Hindustan Petroleum Corporation Ltd.,Crude Oil,Refineries,Mid Cap
+HINDUNILVR,Hindustan Unilever Ltd.,Fast Moving Consumer Goods,Household & Personal Products,Large Cap
+HINDZINC,Hindustan Zinc Ltd.,Non - Ferrous Metals,Metal - Non Ferrous,Large Cap
+HYUNDAI,Hyundai Motor India Ltd.,Automobile & Ancillaries,Automobiles - Passenger Cars,Large Cap
+ICICIBANK,ICICI Bank Ltd.,Banking,Bank - Private,Large Cap
+ICICIGI,ICICI Lombard General Insurance Company Ltd.,Finance,Insurance,Mid Cap
+ICICILIFE,ICICI Life Insurance Ltd.,Finance,Insurance,Mid Cap
+IDEA,Vodafone Idea Ltd.,Telecom,Telecommunication - Service  Provider,Large Cap
+IDFCFIRSTB,IDFC First Bank Ltd.,Banking,Bank - Private,Mid Cap
+IEX,Indian Energy Exchange Ltd.,Power,Power Generation/Distribution,Small Cap
+INDHOTEL,The Indian Hotels Company Ltd.,Hospitality,"Hotel, Resort & Restaurants",Mid Cap
+INDIANB,Indian Bank,Banking,Bank - Public,Large Cap
+INDIGO,Interglobe Aviation Ltd.,Aviation,Airlines,Large Cap
+INDUSINDBK,IndusInd Bank Ltd.,Banking,Bank - Private,Mid Cap
+INDUSTOWER,Indus Towers Ltd.,Telecom,Telecommunication - Service  Provider,Large Cap
+INFY,Infosys Ltd.,Information Technology,IT - Software,Large Cap
+INOXWIND,Inox Wind Ltd.,Capital Goods,Electric Equipment,Small Cap
+IOC,Indian Oil Corporation Ltd.,Crude Oil,Refineries,Large Cap
+IREDA,Indian Renewable Energy Development Agency Ltd.,Finance,Finance - NBFC,Mid Cap
+IRFC,Indian Railway Finance Corporation Ltd.,Finance,Finance Term Lending,Large Cap
+ITC,ITC Ltd.,Fast Moving Consumer Goods,Cigarettes/Tobacco,Large Cap
+JINDALSTEL,Jindal Steel Ltd.,Iron & Steel,Steel/Sponge Iron/Pig Iron,Large Cap
+JIOFIN,JIO Financial Services Ltd.,Finance,Finance - NBFC,Large Cap
+JSWENERGY,JSW Energy Ltd.,Power,Power Generation/Distribution,Mid Cap
+JSWSTEEL,JSW Steel Ltd.,Iron & Steel,Steel & Iron Products,Large Cap
+JUBLFOOD,Jubilant FoodWorks Ltd.,Fast Moving Consumer Goods,Consumer Food,Small Cap
+KALYANKJIL,Kalyan Jewellers India Ltd.,Diamond & Jewellery,Diamond & Jewellery,Mid Cap
+KAYNES,Kaynes Technology India Ltd.,Electricals,Electronics - Components,Small Cap
+KEI,KEI Industries Ltd.,Electricals,Cable,Mid Cap
+KFINTECH,KFin Technologies Ltd.,Finance,Depository Services,Small Cap
+KOTAKBANK,Kotak Mahindra Bank Ltd.,Banking,Bank - Private,Large Cap
+KPITTECH,KPIT Technologies Ltd.,Information Technology,IT - Software,Small Cap
+LAURUSLABS,Laurus Labs Ltd.,Healthcare,Pharmaceuticals & Drugs,Mid Cap
+LICHSGFIN,LIC Housing Finance Ltd.,Finance,Finance - Housing,Small Cap
+LICI,Life Insurance Corporation of India,Finance,Insurance,Large Cap
+LODHA,Lodha Developers Ltd.,Realty,Construction - Real Estate,Mid Cap
+LT,Larsen & Toubro Ltd.,Infrastructure,Engineering - Construction,Large Cap
+LTF,L&T Finance Ltd.,Finance,Finance - NBFC,Mid Cap
+LTM,LTM Ltd.,Information Technology,IT - Software,Large Cap
+LUPIN,Lupin Ltd.,Healthcare,Pharmaceuticals & Drugs,Mid Cap
+M&M,Mahindra & Mahindra Ltd.,Automobile & Ancillaries,Automobiles - Passenger Cars,Large Cap
+MAHABANK,Bank Of Maharashtra,Banking,Bank - Public,Mid Cap
+MANAPPURAM,Manappuram Finance Ltd.,Finance,Finance - NBFC,Small Cap
+MANKIND,Mankind Pharma Ltd.,Healthcare,Pharmaceuticals & Drugs,Mid Cap
+MARICO,Marico Ltd.,Fast Moving Consumer Goods,Edible Oil,Mid Cap
+MARUTI,Maruti Suzuki India Ltd.,Automobile & Ancillaries,Automobiles - Passenger Cars,Large Cap
+MAXHEALTH,Max Healthcare Institute Ltd.,Healthcare,Hospital & Healthcare Services,Mid Cap
+MAZDOCK,Mazagon Dock Shipbuilders Ltd.,Ship Building,Ship Building,Mid Cap
+MCX,Multi Commodity Exchange Of India Ltd.,Finance,Finance - Stock Broking,Mid Cap
+MFSL,Max Financial Services Ltd.,Finance,Finance - Others,Mid Cap
+MOTHERSON,Samvardhana Motherson International Ltd.,Automobile & Ancillaries,Auto Ancillary,Large Cap
+MOTILALOFS,Motilal Oswal Financial Services Ltd.,Finance,Finance - Stock Broking,Mid Cap
+MPHASIS,Mphasis Ltd.,Information Technology,IT - Software,Mid Cap
+MUTHOOTFIN,Muthoot Finance Ltd.,Finance,Finance - NBFC,Large Cap
+NAM-INDIA,Nippon Life India Asset Management Ltd.,Finance,Finance - Asset Management,Mid Cap
+NATIONALUM,National Aluminium Company Ltd.,Non - Ferrous Metals,Aluminium & Aluminium Products,Mid Cap
+NAUKRI,Info Edge (India) Ltd.,Information Technology,BPO/ITeS,Mid Cap
+NBCC,NBCC (India) Ltd.,Other,Engineering Consultancy,Small Cap
+NESTLEIND,Nestle India Ltd.,Fast Moving Consumer Goods,Consumer Food,Large Cap
+NHPC,NHPC Ltd.,Power,Power Generation/Distribution,Mid Cap
+NMDC,NMDC Ltd.,Mining,Mining & Minerals,Mid Cap
+NTPC,NTPC Ltd.,Power,Power Generation/Distribution,Large Cap
+NYKAA,FSN E-Commerce Ventures Ltd.,Information Technology,e-Commerce,Mid Cap
+OBEROIRLTY,Oberoi Realty Ltd.,Realty,Construction - Real Estate,Mid Cap
+OFSS,Oracle Financial Services Software Ltd.,Information Technology,IT - Software,Mid Cap
+OIL,Oil India Ltd.,Crude Oil,Oil Exploration,Mid Cap
+ONGC,Oil & Natural Gas Corporation Ltd.,Crude Oil,Oil Exploration,Large Cap
+PAGEIND,Page Industries Ltd.,Textile,Textile,Mid Cap
+PATANJALI,Patanjali Foods Ltd.,Fast Moving Consumer Goods,Edible Oil,Mid Cap
+PAYTM,One97 Communications Ltd.,Information Technology,Fintech,Mid Cap
+PERSISTENT,Persistent Systems Ltd.,Information Technology,IT - Software,Mid Cap
+PETRONET,Petronet LNG Ltd.,Industrials Gases & Fuels,Industrial Gases & Fuels,Mid Cap
+PFC,Power Finance Corporation Ltd.,Finance,Finance Term Lending,Large Cap
+PGEL,PG Electroplast Ltd.,Consumer Durables,Consumer Durables - Domestic Appliances,Small Cap
+PHOENIXLTD,The Phoenix Mills Ltd.,Realty,Construction - Real Estate,Mid Cap
+PIDILITIND,Pidilite Industries Ltd.,Chemicals,Chemicals,Large Cap
+PIIND,PI Industries Ltd.,Chemicals,Pesticides & Agrochemicals,Mid Cap
+PNB,Punjab National Bank,Banking,Bank - Public,Large Cap
+PNBHOUSING,PNB Housing Finance Ltd.,Finance,Finance - Housing,Small Cap
+POLICYBZR,PB Fintech Ltd.,Information Technology,Fintech,Mid Cap
+POLYCAB,Polycab India Ltd.,Electricals,Cable,Large Cap
+POWERGRID,Power Grid Corporation Of India Ltd.,Power,Power Generation/Distribution,Large Cap
+POWERINDIA,Hitachi Energy India Ltd.,Capital Goods,Electric Equipment,Large Cap
+PREMIERENE,Premier Energies Ltd.,Capital Goods,Electric Equipment,Mid Cap
+PRESTIGE,Prestige Estates Projects Ltd.,Realty,Construction - Real Estate,Mid Cap
+RADICO,Radico Khaitan Ltd.,Alcohol,Breweries & Distilleries,Mid Cap
+RBLBANK,RBL Bank Ltd.,Banking,Bank - Private,Small Cap
+RECLTD,REC Ltd.,Finance,Finance Term Lending,Mid Cap
+RELIANCE,Reliance Industries Ltd.,Crude Oil,Refineries,Large Cap
+RVNL,Rail Vikas Nigam Ltd.,Infrastructure,Engineering - Construction,Mid Cap
+SAGILITY,Sagility Ltd.,Other,Business Support,Small Cap
+SAIL,Steel Authority Of India Ltd.,Iron & Steel,Steel & Iron Products,Mid Cap
+SBICARD,SBI Cards And Payment Services Ltd.,Finance,Finance - NBFC,Mid Cap
+SBILIFE,SBI Life Insurance Company Ltd.,Finance,Insurance,Large Cap
+SBIN,State Bank Of India,Banking,Bank - Public,Large Cap
+SHREECEM,Shree Cement Ltd.,Construction Materials,Cement & Construction Materials,Mid Cap
+SHRIRAMFIN,Shriram Finance Ltd.,Finance,Finance - NBFC,Large Cap
+SIEMENS,Siemens Ltd.,Capital Goods,Electric Equipment,Large Cap
+SOLARINDS,Solar Industries India Ltd.,Chemicals,Chemicals,Large Cap
+SONACOMS,Sona BLW Precision Forgings Ltd.,Automobile & Ancillaries,Auto Ancillary,Mid Cap
+SRF,SRF Ltd.,Chemicals,Chemicals,Mid Cap
+SUNPHARMA,Sun Pharmaceutical Industries Ltd.,Healthcare,Pharmaceuticals & Drugs,Large Cap
+SUPREMEIND,Supreme Industries Ltd.,Plastic Products,Plastic Products,Mid Cap
+SUZLON,Suzlon Energy Ltd.,Capital Goods,Electric Equipment,Mid Cap
+SWIGGY,Swiggy Ltd.,Information Technology,e-Commerce,Mid Cap
+TATACONSUM,Tata Consumer Products Ltd.,Agriculture,Tea/Coffee,Large Cap
+TATAELXSI,Tata Elxsi Ltd.,Information Technology,IT - Software,Small Cap
+TATAPOWER,Tata Power Company Ltd.,Power,Power Generation/Distribution,Large Cap
+TATASTEEL,Tata Steel Ltd.,Iron & Steel,Steel & Iron Products,Large Cap
+TCS,Tata Consultancy Services Ltd.,Information Technology,IT - Software,Large Cap
+TECHM,Tech Mahindra Ltd.,Information Technology,IT - Software,Large Cap
+TIINDIA,Tube Investments of India Ltd.,Automobile & Ancillaries,Auto Ancillary,Mid Cap
+TITAN,Titan Company Ltd.,Diamond & Jewellery,Diamond & Jewellery,Large Cap
+TMPV,Tata Motors Passenger Vehicles Ltd.,Automobile & Ancillaries,Automobiles - Passenger Cars,Large Cap
+TORNTPHARM,Torrent Pharmaceuticals Ltd.,Healthcare,Pharmaceuticals & Drugs,Large Cap
+TRENT,Trent Ltd.,Retailing,Retailing,Large Cap
+TVSMOTOR,TVS Motor Company Ltd.,Automobile & Ancillaries,Automobile Two & Three Wheelers,Large Cap
+UJJIVANSFB,Ujjivan Small Finance Bank Ltd.,Banking,Bank - Private,Small Cap
+ULTRACEMCO,Ultratech Cement Ltd.,Construction Materials,Cement & Construction Materials,Large Cap
+UNIONBANK,Union Bank Of India,Banking,Bank - Public,Large Cap
+UNITDSPR,United Spirits Ltd.,Alcohol,Breweries & Distilleries,Mid Cap
+UNOMINDA,UNO Minda Ltd.,Automobile & Ancillaries,Auto Ancillary,Mid Cap
+UPL,UPL Ltd.,Chemicals,Pesticides & Agrochemicals,Mid Cap
+VBL,Varun Beverages Ltd.,Fast Moving Consumer Goods,Consumer Food,Large Cap
+VEDL,Vedanta Ltd.,Non - Ferrous Metals,Metal - Non Ferrous,Large Cap
+VMM,Vishal Mega Mart Ltd.,Retailing,Retailing,Mid Cap
+VOLTAS,Voltas Ltd.,Consumer Durables,Air Conditioners,Mid Cap
+WAAREEENER,Waaree Energies Ltd.,Capital Goods,Electric Equipment,Mid Cap
+WIPRO,Wipro Ltd.,Information Technology,IT - Software,Large Cap
+YESBANK,Yes Bank Ltd.,Banking,Bank - Private,Mid Cap
+ZYDUSLIFE,Zydus Lifesciences Ltd.,Healthcare,Pharmaceuticals & Drugs,Mid Cap

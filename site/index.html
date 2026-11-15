@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>F&amp;O Research Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+</head>
+<body>
+<header class="top">
+  <a href="#/" class="brand">F&amp;O Research</a>
+  <nav>
+    <a href="#/" data-nav="market">Market</a>
+    <a href="#/screener" data-nav="screener">Screener</a>
+    <a href="#/sectors" data-nav="sectors">Sectors</a>
+  </nav>
+  <div class="search">
+    <input id="q" list="symlist" placeholder="Search stock or symbol…" autocomplete="off" aria-label="Search stock">
+    <datalist id="symlist"></datalist>
+  </div>
+  <button id="theme" class="ghost" aria-label="Toggle dark mode">◐</button>
+</header>
+<div id="banner"></div>
+<main id="app"><p class="muted pad">Loading…</p></main>
+<footer class="muted">Data: NSE end-of-day files and your StockEdge downloads. For research only, not investment advice.</footer>
+<script src="app.js"></script>
+</body>
+</html>

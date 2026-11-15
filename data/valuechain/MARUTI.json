@@ -1,0 +1,48 @@
+{
+  "sym": "MARUTI",
+  "status": "draft",
+  "note": "First draft. Items and suppliers to be verified against the annual report, earnings calls and related-party disclosures. Weights are rough (High/Medium/Low).",
+  "inputs": [
+    {"name": "Steel and metals", "weight": "High", "driver": "India HRC/CRC steel, LME aluminium and copper", "children": [
+      {"name": "Flat steel (body panels)", "driver": "India HRC/CRC price", "fno": ["TATASTEEL", "JSWSTEEL", "SAIL", "JINDALSTEL"]},
+      {"name": "Aluminium (castings, wheels)", "driver": "LME aluminium", "fno": ["HINDALCO", "NATIONALUM", "VEDL"]},
+      {"name": "Copper (wiring)", "driver": "LME copper", "fno": ["HINDALCO", "VEDL"]},
+      {"name": "Platinum-group metals (catalytic converters)", "driver": "Platinum, palladium, rhodium prices", "other": ["Imported"]}
+    ]},
+    {"name": "Bought-out components", "weight": "High", "driver": "Steel and copper pass-through; JPY/INR on imported parts", "children": [
+      {"name": "Engine and powertrain parts", "fno": ["BHARATFORG", "SONACOMS", "BOSCHLTD"]},
+      {"name": "Electricals, lighting, wiring harness", "fno": ["MOTHERSON", "UNOMINDA", "BOSCHLTD"]},
+      {"name": "Tyres", "driver": "Natural rubber, crude-linked synthetic rubber", "other": ["MRF", "Apollo Tyres", "CEAT"]},
+      {"name": "Glass", "driver": "Soda ash, gas", "other": ["Asahi India Glass"]},
+      {"name": "Batteries", "driver": "Lead; lithium for EVs", "other": ["Exide", "Amara Raja"]},
+      {"name": "Chains, tubes, precision parts", "fno": ["TIINDIA"]}
+    ]},
+    {"name": "Plastics, rubber, paint", "weight": "Medium", "driver": "Crude and naphtha, natural rubber", "children": [
+      {"name": "Polymers (bumpers, dashboards)", "driver": "Crude, naphtha", "fno": ["RELIANCE"]},
+      {"name": "Paint and coatings", "driver": "Crude derivatives, titanium dioxide", "other": ["Kansai Nerolac"]}
+    ]},
+    {"name": "Energy and utilities", "weight": "Low", "driver": "Power tariffs, gas prices", "children": [
+      {"name": "Electricity", "fno": ["NTPC", "TATAPOWER"]},
+      {"name": "Natural gas", "driver": "LNG spot, APM gas price", "fno": ["GAIL", "PETRONET"]}
+    ]},
+    {"name": "Services", "weight": "Medium", "children": [
+      {"name": "Technology royalty to Suzuki (parent)", "driver": "JPY/INR, royalty rate", "other": ["Suzuki Motor Corp (Japan)"]},
+      {"name": "Logistics (rail and road dispatch)", "driver": "Diesel, rail freight rates", "fno": ["CONCOR"]},
+      {"name": "Employees and contract labour", "driver": "Wage settlements"},
+      {"name": "Advertising and dealer support"}
+    ]}
+  ],
+  "outputs": [
+    {"name": "Domestic passenger vehicles", "weight": "Largest", "driver": "Rural demand, monsoon, car-loan rates, GST, fuel prices", "children": [
+      {"name": "Hatchbacks and sedans"}, {"name": "SUVs and MPVs"}, {"name": "Vans and light commercial"},
+      {"name": "Electric vehicles", "driver": "EV subsidies, battery costs"}
+    ]},
+    {"name": "Exports", "weight": "Medium", "driver": "USD/INR; demand in Africa, Latin America, Middle East"},
+    {"name": "Spare parts and accessories", "weight": "Medium", "driver": "Number of cars on the road; high margin"},
+    {"name": "Services", "weight": "Small", "children": [
+      {"name": "Servicing and repairs"}, {"name": "Pre-owned cars (True Value)"}, {"name": "Insurance broking"},
+      {"name": "Driving schools"}, {"name": "Car-loan tie-ups", "driver": "Interest rates", "fno": ["SBIN", "HDFCBANK", "BAJFINANCE"]}
+    ]},
+    {"name": "Treasury income on cash", "weight": "Small", "driver": "Bond yields"}
+  ]
+}

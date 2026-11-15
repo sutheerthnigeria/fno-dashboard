@@ -1,0 +1,6 @@
+# Raw NSE downloads are large; only the daily summaries (data/daily) are kept in the repo
+data/raw/
+# Your StockEdge downloads come from a paid subscription: keep them on your laptop only
+data/stockedge/
+__pycache__/
+*.pyc
