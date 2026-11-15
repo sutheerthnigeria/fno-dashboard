@@ -1,0 +1,37 @@
+{
+  "sym": "HINDZINC",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Mining operations (zinc-lead-silver ore)",
+      "driver": "Ore grade, mining costs"
+    },
+    {
+      "name": "Energy \u2013 power for smelting",
+      "weight": "High",
+      "driver": "Power tariff"
+    },
+    {
+      "name": "Sulphuric acid and reagents"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Zinc metal",
+      "weight": "Largest",
+      "driver": "LME zinc price"
+    },
+    {
+      "name": "Lead metal",
+      "driver": "LME lead"
+    },
+    {
+      "name": "Silver",
+      "driver": "Silver price"
+    },
+    {
+      "name": "Sulphuric acid by-product"
+    }
+  ]
+}

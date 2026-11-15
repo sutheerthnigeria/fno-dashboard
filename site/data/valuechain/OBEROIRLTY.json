@@ -1,0 +1,54 @@
+{
+  "sym": "OBEROIRLTY",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Land",
+      "weight": "High",
+      "driver": "Land price inflation"
+    },
+    {
+      "name": "Construction materials",
+      "driver": "Steel, cement prices",
+      "fno": [
+        "TATASTEEL",
+        "ULTRACEMCO"
+      ]
+    },
+    {
+      "name": "Labour",
+      "driver": "Wage inflation"
+    },
+    {
+      "name": "Home loan offtake",
+      "driver": "Interest rates",
+      "fno": [
+        "HDFCBANK",
+        "SBIN",
+        "LICHSGFIN"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Residential launches and bookings",
+      "weight": "Largest",
+      "driver": "Housing demand, affordability"
+    },
+    {
+      "name": "Commercial leasing",
+      "driver": "IT and BFSI office demand"
+    },
+    {
+      "name": "Retail malls",
+      "driver": "Consumer footfall, retailer expansion"
+    },
+    {
+      "name": "Hospitality",
+      "fno": [
+        "INDHOTEL"
+      ]
+    }
+  ]
+}

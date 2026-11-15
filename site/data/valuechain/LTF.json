@@ -1,0 +1,75 @@
+{
+  "sym": "LTF",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Cost of borrowing",
+      "weight": "High",
+      "driver": "RBI repo, credit rating, G-sec yields",
+      "children": [
+        {
+          "name": "NCD / bond issuances"
+        },
+        {
+          "name": "Bank borrowings"
+        },
+        {
+          "name": "Commercial paper"
+        }
+      ]
+    },
+    {
+      "name": "Employee costs"
+    },
+    {
+      "name": "Technology",
+      "fno": [
+        "INFY",
+        "TCS"
+      ]
+    },
+    {
+      "name": "Credit costs / provisions",
+      "weight": "High",
+      "driver": "Collection efficiency, delinquency"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Consumer loans",
+      "driver": "Interest rates, consumption demand",
+      "children": [
+        {
+          "name": "Two-wheeler / auto loans"
+        },
+        {
+          "name": "Personal loans"
+        },
+        {
+          "name": "Microfinance"
+        },
+        {
+          "name": "Consumer durables"
+        }
+      ]
+    },
+    {
+      "name": "SME / business loans"
+    },
+    {
+      "name": "Gold loans",
+      "driver": "Gold price",
+      "fno": [
+        "MUTHOOTFIN",
+        "MANAPPURAM"
+      ]
+    },
+    {
+      "name": "Insurance and investment products",
+      "fno": [
+        "BAJAJFINSV"
+      ]
+    }
+  ]
+}

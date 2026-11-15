@@ -1,0 +1,38 @@
+{
+  "sym": "BAJAJ-AUTO",
+  "name": "Bajaj Auto Ltd.",
+  "what": "Bajaj Auto Ltd. operates in the Automobile Two & Three Wheelers segment of the Automobile & Ancillaries sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Automobile & Ancillaries",
+    "Industry: Automobile Two & Three Wheelers",
+    "Market cap: Large Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Crude oil price",
+      "direction": "negative",
+      "note": "Fuel cost hurts demand"
+    },
+    {
+      "factor": "Steel price",
+      "direction": "negative",
+      "note": "Input cost"
+    },
+    {
+      "factor": "Monsoon",
+      "direction": "positive",
+      "note": "Rural demand"
+    },
+    {
+      "factor": "Auto loan rates",
+      "direction": "negative"
+    }
+  ]
+}

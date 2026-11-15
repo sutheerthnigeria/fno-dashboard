@@ -1,0 +1,43 @@
+{
+  "sym": "MFSL",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Claims (life / health / general)",
+      "weight": "High",
+      "driver": "Mortality tables, medical inflation"
+    },
+    {
+      "name": "Investment portfolio",
+      "driver": "Equity markets, G-sec yields"
+    },
+    {
+      "name": "Reinsurance costs"
+    },
+    {
+      "name": "Agent and distribution costs"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Life insurance premiums",
+      "weight": "Largest",
+      "driver": "Household savings rate"
+    },
+    {
+      "name": "Health insurance premiums",
+      "driver": "Medical inflation"
+    },
+    {
+      "name": "General insurance premiums"
+    },
+    {
+      "name": "Investment income",
+      "driver": "Equity + bond markets"
+    },
+    {
+      "name": "Annuity and pension products"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "sym": "INDIGO",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Aviation turbine fuel (ATF)",
+      "weight": "Highest ~35-40% of cost",
+      "driver": "Crude oil price, USD/INR"
+    },
+    {
+      "name": "Aircraft lease / ownership",
+      "driver": "USD/INR, LIBOR"
+    },
+    {
+      "name": "Airport charges",
+      "driver": "Regulator-set tariffs"
+    },
+    {
+      "name": "Maintenance, Repair, Overhaul (MRO)"
+    },
+    {
+      "name": "Employee costs"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Domestic passenger revenue",
+      "weight": "Largest",
+      "driver": "Yield, load factor, capacity"
+    },
+    {
+      "name": "International routes"
+    },
+    {
+      "name": "Cargo",
+      "driver": "E-commerce, perishables"
+    },
+    {
+      "name": "Ancillaries (seats, meals, hotels)"
+    }
+  ]
+}

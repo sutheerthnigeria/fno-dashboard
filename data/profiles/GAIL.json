@@ -1,0 +1,23 @@
+{
+  "sym": "GAIL",
+  "name": "GAIL (India) Ltd.",
+  "what": "GAIL (India) Ltd. operates in the Gas Transmission/Marketing segment of the Gas Transmission sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Gas Transmission",
+    "Industry: Gas Transmission/Marketing",
+    "Market cap: Large Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}

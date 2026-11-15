@@ -1,0 +1,49 @@
+{
+  "sym": "DELHIVERY",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Diesel and fuel",
+      "weight": "High",
+      "driver": "Crude oil price"
+    },
+    {
+      "name": "Vehicles and containers",
+      "driver": "Steel prices"
+    },
+    {
+      "name": "Rail haulage",
+      "fno": [
+        "CONCOR"
+      ]
+    },
+    {
+      "name": "Technology (TMS, WMS)",
+      "fno": [
+        "INFY",
+        "TCS"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Container rail freight",
+      "weight": "Largest for CONCOR",
+      "driver": "EXIM trade volumes"
+    },
+    {
+      "name": "Express parcel delivery",
+      "driver": "E-commerce growth",
+      "fno": [
+        "DELHIVERY"
+      ]
+    },
+    {
+      "name": "Supply chain and warehousing"
+    },
+    {
+      "name": "Cold chain"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "sym": "CGPOWER",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Steel and metals",
+      "weight": "High",
+      "fno": [
+        "TATASTEEL",
+        "JSWSTEEL",
+        "HINDALCO"
+      ]
+    },
+    {
+      "name": "Electrical components",
+      "driver": "Copper prices",
+      "fno": [
+        "HINDALCO",
+        "VEDL"
+      ]
+    },
+    {
+      "name": "Electronic components",
+      "driver": "Semiconductor supply"
+    },
+    {
+      "name": "Contract manufacturing",
+      "fno": [
+        "DIXON",
+        "AMBER"
+      ]
+    },
+    {
+      "name": "Energy",
+      "fno": [
+        "NTPC",
+        "TATAPOWER"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Power equipment / transformers",
+      "driver": "Power capex, infrastructure spend"
+    },
+    {
+      "name": "Industrial automation"
+    },
+    {
+      "name": "Railway and defence equipment",
+      "driver": "Govt capex budget"
+    },
+    {
+      "name": "Engineering project orders",
+      "driver": "Order inflows"
+    },
+    {
+      "name": "After-sales service"
+    }
+  ]
+}

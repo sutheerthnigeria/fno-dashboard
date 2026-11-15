@@ -1,0 +1,94 @@
+{
+  "sym": "KOTAKBANK",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Deposits (cost of funds)",
+      "weight": "High",
+      "driver": "RBI repo rate, liquidity",
+      "children": [
+        {
+          "name": "CASA deposits",
+          "driver": "Savings rate"
+        },
+        {
+          "name": "Term deposits",
+          "driver": "FD rates"
+        },
+        {
+          "name": "Borrowings / bonds",
+          "driver": "G-sec yields"
+        }
+      ]
+    },
+    {
+      "name": "Technology and infrastructure",
+      "weight": "Medium",
+      "driver": "USD/INR on import",
+      "fno": [
+        "INFY",
+        "TCS",
+        "WIPRO"
+      ],
+      "other": [
+        "Infosys",
+        "TCS",
+        "Wipro \u2013 core banking"
+      ]
+    },
+    {
+      "name": "Employee costs",
+      "weight": "High"
+    },
+    {
+      "name": "Provisions and credit costs",
+      "weight": "High",
+      "driver": "Credit cycle, NPAs"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Retail loans",
+      "weight": "Largest",
+      "driver": "Home/auto loan rates, credit demand",
+      "children": [
+        {
+          "name": "Home loans"
+        },
+        {
+          "name": "Auto loans"
+        },
+        {
+          "name": "Personal loans"
+        },
+        {
+          "name": "Credit cards",
+          "fno": [
+            "SBICARD"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Corporate and SME loans",
+      "weight": "Large"
+    },
+    {
+      "name": "Treasury (bonds, forex)",
+      "driver": "G-sec yields, USD/INR"
+    },
+    {
+      "name": "Fees and commissions",
+      "driver": "Transaction volumes"
+    },
+    {
+      "name": "Insurance and wealth distribution",
+      "fno": [
+        "HDFCLIFE",
+        "SBILIFE",
+        "ICICIGI"
+      ]
+    }
+  ]
+}

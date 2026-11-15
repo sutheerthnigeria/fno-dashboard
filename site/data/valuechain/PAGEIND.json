@@ -1,0 +1,26 @@
+{
+  "sym": "PAGEIND",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Tobacco leaf / yarn",
+      "weight": "High",
+      "driver": "Tobacco price / cotton yarn price"
+    },
+    {
+      "name": "Packaging",
+      "driver": "Crude price"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Cigarettes / innerwear",
+      "weight": "Largest",
+      "driver": "Excise policy / premium consumption"
+    },
+    {
+      "name": "Other FMCG / hosiery"
+    }
+  ]
+}

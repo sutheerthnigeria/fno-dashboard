@@ -1,0 +1,32 @@
+{
+  "sym": "360ONE",
+  "name": "360 One Wam Ltd.",
+  "what": "360 One Wam Ltd. operates in the Finance - Stock Broking segment of the Finance sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Finance",
+    "Industry: Finance - Stock Broking",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "RBI repo rate",
+      "direction": "negative"
+    },
+    {
+      "factor": "Credit cycle",
+      "direction": "positive"
+    },
+    {
+      "factor": "Equity markets",
+      "direction": "positive",
+      "note": "Affects AUM-linked fees"
+    }
+  ]
+}

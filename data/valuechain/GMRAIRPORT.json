@@ -1,0 +1,67 @@
+{
+  "sym": "GMRAIRPORT",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Steel and rebar",
+      "weight": "High",
+      "fno": [
+        "TATASTEEL",
+        "JSWSTEEL",
+        "SAIL"
+      ]
+    },
+    {
+      "name": "Cement",
+      "weight": "High",
+      "fno": [
+        "ULTRACEMCO",
+        "AMBUJACEM",
+        "SHREECEM"
+      ]
+    },
+    {
+      "name": "Sand, aggregate and other materials"
+    },
+    {
+      "name": "Equipment and machinery",
+      "fno": [
+        "LT",
+        "BHEL"
+      ]
+    },
+    {
+      "name": "Labour"
+    },
+    {
+      "name": "Finance",
+      "driver": "Interest cost, project financing",
+      "fno": [
+        "SBIN",
+        "HDFCBANK"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Infrastructure projects (roads, metro, ports)",
+      "weight": "Largest",
+      "driver": "Govt capex budget, NHDP"
+    },
+    {
+      "name": "Real estate construction",
+      "fno": [
+        "DLF",
+        "GODREJPROP",
+        "LODHA"
+      ]
+    },
+    {
+      "name": "Industrial and commercial buildings"
+    },
+    {
+      "name": "O&M contracts"
+    }
+  ]
+}

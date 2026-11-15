@@ -1,0 +1,37 @@
+{
+  "sym": "HAL",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Electronics and avionics",
+      "driver": "USD/INR on imports"
+    },
+    {
+      "name": "Metals and composites",
+      "fno": [
+        "TATASTEEL",
+        "HINDALCO"
+      ]
+    },
+    {
+      "name": "Technology licences and ToT"
+    },
+    {
+      "name": "Skilled workforce"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Defence systems and platforms",
+      "weight": "Largest",
+      "driver": "Defence capex budget, Atmanirbhar Bharat"
+    },
+    {
+      "name": "Exports under government deals"
+    },
+    {
+      "name": "After-sales and MRO"
+    }
+  ]
+}

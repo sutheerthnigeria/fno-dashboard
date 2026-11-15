@@ -1,0 +1,52 @@
+{
+  "sym": "MAXHEALTH",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Medical consumables and devices",
+      "driver": "USD/INR on imports"
+    },
+    {
+      "name": "Drugs and pharmaceuticals",
+      "fno": [
+        "SUNPHARMA",
+        "CIPLA",
+        "DRREDDY"
+      ]
+    },
+    {
+      "name": "Employee costs (doctors, nurses)",
+      "weight": "Highest"
+    },
+    {
+      "name": "Real estate and capex"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "In-patient services (IPD)",
+      "weight": "Largest",
+      "driver": "ARPU, occupancy"
+    },
+    {
+      "name": "Out-patient services (OPD)"
+    },
+    {
+      "name": "Diagnostics"
+    },
+    {
+      "name": "Pharmacy retail",
+      "fno": [
+        "SUNPHARMA"
+      ]
+    },
+    {
+      "name": "Health insurance claims",
+      "fno": [
+        "ICICIGI",
+        "HDFCLIFE"
+      ]
+    }
+  ]
+}

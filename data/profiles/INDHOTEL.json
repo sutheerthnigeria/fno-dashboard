@@ -1,0 +1,23 @@
+{
+  "sym": "INDHOTEL",
+  "name": "The Indian Hotels Company Ltd.",
+  "what": "The Indian Hotels Company Ltd. operates in the Hotel, Resort & Restaurants segment of the Hospitality sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Hospitality",
+    "Industry: Hotel, Resort & Restaurants",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}

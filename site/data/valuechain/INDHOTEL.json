@@ -1,0 +1,41 @@
+{
+  "sym": "INDHOTEL",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Food and beverage",
+      "driver": "Food inflation, commodity prices"
+    },
+    {
+      "name": "Employee costs",
+      "weight": "High"
+    },
+    {
+      "name": "Energy",
+      "fno": [
+        "NTPC",
+        "TATAPOWER"
+      ]
+    },
+    {
+      "name": "Property and maintenance"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Room revenue (RevPAR)",
+      "weight": "Largest",
+      "driver": "Domestic travel, corp demand, RevPAR"
+    },
+    {
+      "name": "Food and beverage"
+    },
+    {
+      "name": "Events and weddings"
+    },
+    {
+      "name": "Management contracts"
+    }
+  ]
+}

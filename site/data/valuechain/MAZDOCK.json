@@ -1,0 +1,38 @@
+{
+  "sym": "MAZDOCK",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Steel plates",
+      "weight": "High",
+      "fno": [
+        "TATASTEEL",
+        "JSWSTEEL"
+      ]
+    },
+    {
+      "name": "Marine engines and equipment",
+      "driver": "EUR/INR, USD/INR"
+    },
+    {
+      "name": "Labour and skilled workers"
+    },
+    {
+      "name": "Defence electronics"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Naval vessels and defence ships",
+      "weight": "Largest",
+      "driver": "Defence capex budget"
+    },
+    {
+      "name": "Commercial vessels"
+    },
+    {
+      "name": "Ship repairs and refit"
+    }
+  ]
+}

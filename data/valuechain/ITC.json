@@ -1,0 +1,46 @@
+{
+  "sym": "ITC",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Tobacco leaf",
+      "weight": "High",
+      "driver": "Domestic tobacco crop, state taxes"
+    },
+    {
+      "name": "FMCG inputs",
+      "driver": "Commodity prices for food, paper, personal care"
+    },
+    {
+      "name": "Paper and packaging",
+      "driver": "Wood pulp prices"
+    },
+    {
+      "name": "Hotel operations inputs",
+      "driver": "Food, energy"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Cigarettes",
+      "weight": "Largest, ~80% of profit",
+      "driver": "Govt excise, taxation policy"
+    },
+    {
+      "name": "FMCG foods and staples"
+    },
+    {
+      "name": "Paperboards and packaging"
+    },
+    {
+      "name": "Hotels",
+      "fno": [
+        "INDHOTEL"
+      ]
+    },
+    {
+      "name": "Agri-business exports"
+    }
+  ]
+}

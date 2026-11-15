@@ -1,0 +1,34 @@
+{
+  "sym": "SOLARINDS",
+  "name": "Solar Industries India Ltd.",
+  "what": "Solar Industries India Ltd. operates in the Chemicals segment of the Chemicals sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Chemicals",
+    "Industry: Chemicals",
+    "Market cap: Large Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Crude oil / naphtha",
+      "direction": "negative",
+      "note": "Feedstock"
+    },
+    {
+      "factor": "China chemical exports",
+      "direction": "negative",
+      "note": "Competition"
+    },
+    {
+      "factor": "Monsoon / farm income",
+      "direction": "positive",
+      "note": "Agrochem demand"
+    }
+  ]
+}

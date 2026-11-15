@@ -1,0 +1,67 @@
+{
+  "sym": "TATASTEEL",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Iron ore",
+      "weight": "High",
+      "driver": "Seaborne iron ore price",
+      "fno": [
+        "NMDC"
+      ],
+      "other": [
+        "NMDC"
+      ]
+    },
+    {
+      "name": "Coking coal",
+      "weight": "High",
+      "driver": "Australian coking coal price (imported)"
+    },
+    {
+      "name": "Scrap steel",
+      "driver": "Global scrap price"
+    },
+    {
+      "name": "Energy (electricity, gas)",
+      "driver": "Power tariff, gas prices",
+      "fno": [
+        "NTPC",
+        "GAIL"
+      ]
+    },
+    {
+      "name": "Logistics",
+      "fno": [
+        "CONCOR"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Hot-rolled coil / flat steel",
+      "weight": "Largest",
+      "driver": "China steel export, domestic demand",
+      "fno": [
+        "MARUTI",
+        "LT",
+        "BHEL"
+      ]
+    },
+    {
+      "name": "Long products (rebars, wire rods)",
+      "driver": "Construction activity"
+    },
+    {
+      "name": "Specialty steel",
+      "driver": "Auto, defence demand"
+    },
+    {
+      "name": "Downstream (pipes, tubes)",
+      "fno": [
+        "APLAPOLLO"
+      ]
+    }
+  ]
+}

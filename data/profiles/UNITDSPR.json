@@ -1,0 +1,23 @@
+{
+  "sym": "UNITDSPR",
+  "name": "United Spirits Ltd.",
+  "what": "United Spirits Ltd. operates in the Breweries & Distilleries segment of the Alcohol sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Alcohol",
+    "Industry: Breweries & Distilleries",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}

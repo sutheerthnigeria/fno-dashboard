@@ -1,0 +1,42 @@
+{
+  "sym": "KALYANKJIL",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Gold",
+      "weight": "Highest",
+      "driver": "MCX gold price, USD/INR"
+    },
+    {
+      "name": "Diamonds and precious stones",
+      "driver": "Global rough diamond prices"
+    },
+    {
+      "name": "Working capital and gold loans",
+      "driver": "Interest rates"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Gold jewellery",
+      "weight": "Largest",
+      "driver": "Wedding season, rural income, gold price"
+    },
+    {
+      "name": "Diamond jewellery"
+    },
+    {
+      "name": "Watches and accessories",
+      "fno": [
+        "TITAN"
+      ]
+    },
+    {
+      "name": "Eyewear and fashion",
+      "fno": [
+        "TITAN"
+      ]
+    }
+  ]
+}

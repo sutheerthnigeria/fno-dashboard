@@ -1,0 +1,23 @@
+{
+  "sym": "PETRONET",
+  "name": "Petronet LNG Ltd.",
+  "what": "Petronet LNG Ltd. operates in the Industrial Gases & Fuels segment of the Industrials Gases & Fuels sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Industrials Gases & Fuels",
+    "Industry: Industrial Gases & Fuels",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}

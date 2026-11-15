@@ -1,0 +1,39 @@
+{
+  "sym": "OIL",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Exploration and drilling capex",
+      "driver": "Crude price justification"
+    },
+    {
+      "name": "Oilfield services",
+      "driver": "Day rates, steel"
+    },
+    {
+      "name": "Equipment and chemicals"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Crude oil",
+      "weight": "Largest",
+      "driver": "Brent crude price, OPEC output"
+    },
+    {
+      "name": "Natural gas",
+      "driver": "Gas APM price"
+    },
+    {
+      "name": "Petrochemicals",
+      "fno": [
+        "RELIANCE"
+      ]
+    },
+    {
+      "name": "Refining (for integrated players)",
+      "driver": "GRM \u2013 gross refining margin"
+    }
+  ]
+}

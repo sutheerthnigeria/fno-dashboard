@@ -1,0 +1,36 @@
+{
+  "sym": "JSWSTEEL",
+  "name": "JSW Steel Ltd.",
+  "what": "JSW Steel Ltd. operates in the Steel & Iron Products segment of the Iron & Steel sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Iron & Steel",
+    "Industry: Steel & Iron Products",
+    "Market cap: Large Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "China steel exports",
+      "direction": "negative",
+      "note": "Pricing pressure"
+    },
+    {
+      "factor": "Coking coal price",
+      "direction": "negative"
+    },
+    {
+      "factor": "Iron ore price",
+      "direction": "negative"
+    },
+    {
+      "factor": "Domestic construction / auto demand",
+      "direction": "positive"
+    }
+  ]
+}

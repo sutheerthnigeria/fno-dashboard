@@ -1,0 +1,23 @@
+{
+  "sym": "SAGILITY",
+  "name": "Sagility Ltd.",
+  "what": "Sagility Ltd. operates in the Business Support segment of the Other sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Other",
+    "Industry: Business Support",
+    "Market cap: Small Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}

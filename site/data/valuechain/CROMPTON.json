@@ -1,0 +1,53 @@
+{
+  "sym": "CROMPTON",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Electronic components",
+      "weight": "High",
+      "driver": "Semicon supply, USD/INR",
+      "other": [
+        "Imported from China/Korea"
+      ]
+    },
+    {
+      "name": "Steel and metals",
+      "fno": [
+        "TATASTEEL",
+        "HINDALCO"
+      ]
+    },
+    {
+      "name": "Plastics",
+      "driver": "Crude price",
+      "fno": [
+        "RELIANCE"
+      ]
+    },
+    {
+      "name": "Contract manufacturing",
+      "fno": [
+        "DIXON",
+        "AMBER"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Consumer electronics (TVs, appliances)",
+      "weight": "Largest",
+      "driver": "Consumer discretionary spend, urban demand"
+    },
+    {
+      "name": "Lighting and switchgear"
+    },
+    {
+      "name": "Air conditioners and refrigerators",
+      "driver": "Summer heat intensity, real estate"
+    },
+    {
+      "name": "Small appliances"
+    }
+  ]
+}

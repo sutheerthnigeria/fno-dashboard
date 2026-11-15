@@ -1,0 +1,43 @@
+{
+  "sym": "SUPREMEIND",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Steel coils / polymer resin",
+      "weight": "High",
+      "driver": "HRC steel / HDPE-PVC prices",
+      "fno": [
+        "TATASTEEL",
+        "JSWSTEEL",
+        "RELIANCE"
+      ]
+    },
+    {
+      "name": "Energy"
+    },
+    {
+      "name": "Logistics",
+      "fno": [
+        "CONCOR"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Steel tubes and pipes",
+      "driver": "Construction, infra, oil & gas"
+    },
+    {
+      "name": "PVC and CPVC pipes",
+      "driver": "Real estate, agri irrigation",
+      "fno": [
+        "DLF",
+        "LODHA"
+      ]
+    },
+    {
+      "name": "Plastic tanks and containers"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "sym": "DABUR",
+  "name": "Dabur India Ltd.",
+  "what": "Dabur India Ltd. operates in the Household & Personal Products segment of the Fast Moving Consumer Goods sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Fast Moving Consumer Goods",
+    "Industry: Household & Personal Products",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Crude oil",
+      "direction": "negative",
+      "note": "Packaging costs"
+    },
+    {
+      "factor": "Agricultural commodities",
+      "direction": "negative",
+      "note": "Input costs"
+    },
+    {
+      "factor": "Monsoon",
+      "direction": "positive",
+      "note": "Rural income"
+    },
+    {
+      "factor": "Inflation",
+      "direction": "mixed"
+    }
+  ]
+}

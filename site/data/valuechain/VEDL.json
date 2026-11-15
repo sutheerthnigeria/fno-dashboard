@@ -1,0 +1,45 @@
+{
+  "sym": "VEDL",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Mining (Zn, Pb, Ag, Cu, Al, Fe ore)",
+      "driver": "Ore grades, mining cost"
+    },
+    {
+      "name": "Energy \u2013 smelting power",
+      "weight": "Very High",
+      "driver": "Power tariff, captive power cost"
+    },
+    {
+      "name": "Coal for captive power",
+      "fno": [
+        "COALINDIA"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Zinc and lead",
+      "weight": "Largest",
+      "driver": "LME zinc/lead"
+    },
+    {
+      "name": "Aluminium",
+      "driver": "LME aluminium"
+    },
+    {
+      "name": "Copper",
+      "driver": "LME copper"
+    },
+    {
+      "name": "Iron ore",
+      "driver": "Seaborne iron ore"
+    },
+    {
+      "name": "Oil and gas (Cairn India)",
+      "driver": "Crude oil price"
+    }
+  ]
+}

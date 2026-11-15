@@ -1,0 +1,31 @@
+{
+  "sym": "IOC",
+  "name": "Indian Oil Corporation Ltd.",
+  "what": "Indian Oil Corporation Ltd. operates in the Refineries segment of the Crude Oil sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Crude Oil",
+    "Industry: Refineries",
+    "Market cap: Large Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Brent crude price",
+      "direction": "positive"
+    },
+    {
+      "factor": "USD/INR",
+      "direction": "positive"
+    },
+    {
+      "factor": "Govt fuel price controls",
+      "direction": "negative"
+    }
+  ]
+}

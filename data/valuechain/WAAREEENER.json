@@ -1,0 +1,57 @@
+{
+  "sym": "WAAREEENER",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Coal",
+      "weight": "Highest for thermal",
+      "driver": "Coal India supply, import coal price",
+      "fno": [
+        "COALINDIA"
+      ]
+    },
+    {
+      "name": "Gas",
+      "driver": "LNG spot, APM gas price",
+      "fno": [
+        "GAIL",
+        "PETRONET"
+      ]
+    },
+    {
+      "name": "Solar panels / wind equipment",
+      "driver": "Module prices, USD/INR"
+    },
+    {
+      "name": "Equipment and EPC",
+      "fno": [
+        "BHEL",
+        "ABB",
+        "SIEMENS",
+        "LT"
+      ]
+    },
+    {
+      "name": "Land and transmission infrastructure"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Electricity generation (units)",
+      "weight": "Largest",
+      "driver": "PLF, power tariffs, PPA rates"
+    },
+    {
+      "name": "Renewable energy",
+      "driver": "Solar/wind tariff, RPO mandates"
+    },
+    {
+      "name": "Transmission and distribution"
+    },
+    {
+      "name": "Green hydrogen / carbon credits",
+      "driver": "Policy, global carbon price"
+    }
+  ]
+}

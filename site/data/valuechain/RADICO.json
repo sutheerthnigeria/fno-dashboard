@@ -1,0 +1,41 @@
+{
+  "sym": "RADICO",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Grain (ENA feedstock)",
+      "weight": "High",
+      "driver": "Wheat/barley/rice prices, monsoon"
+    },
+    {
+      "name": "Glass bottles",
+      "driver": "Soda ash, natural gas prices"
+    },
+    {
+      "name": "Molasses and sugar",
+      "driver": "Sugar price"
+    },
+    {
+      "name": "Excise duties and state levies",
+      "weight": "High"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "IMFL (whisky, rum, vodka, gin)",
+      "weight": "Largest",
+      "driver": "State govt pricing, premium mix"
+    },
+    {
+      "name": "Prestige and above brands",
+      "weight": "Higher margin"
+    },
+    {
+      "name": "Beer (for some)"
+    },
+    {
+      "name": "ENA sales to other distillers"
+    }
+  ]
+}

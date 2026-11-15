@@ -1,0 +1,23 @@
+{
+  "sym": "COCHINSHIP",
+  "name": "Cochin Shipyard Ltd.",
+  "what": "Cochin Shipyard Ltd. operates in the Ship Building segment of the Ship Building sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Ship Building",
+    "Industry: Ship Building",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}

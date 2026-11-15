@@ -1,0 +1,33 @@
+{
+  "sym": "TATAPOWER",
+  "name": "Tata Power Company Ltd.",
+  "what": "Tata Power Company Ltd. operates in the Power Generation/Distribution segment of the Power sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Power",
+    "Industry: Power Generation/Distribution",
+    "Market cap: Large Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Coal price",
+      "direction": "negative",
+      "note": "Fuel cost"
+    },
+    {
+      "factor": "Govt capex (power infra)",
+      "direction": "positive"
+    },
+    {
+      "factor": "Solar panel prices",
+      "direction": "negative",
+      "note": "RE capex falls"
+    }
+  ]
+}

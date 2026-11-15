@@ -1,0 +1,60 @@
+{
+  "sym": "ALKEM",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Active Pharmaceutical Ingredients (APIs)",
+      "weight": "High",
+      "driver": "China API prices, USD/INR",
+      "other": [
+        "Imported APIs from China",
+        "Domestic API manufacturers"
+      ]
+    },
+    {
+      "name": "Solvents and excipients",
+      "driver": "Crude and chemical prices"
+    },
+    {
+      "name": "Packaging materials",
+      "driver": "Plastic and aluminium prices"
+    },
+    {
+      "name": "R&D costs",
+      "driver": "Clinical trial spend"
+    },
+    {
+      "name": "Energy",
+      "fno": [
+        "NTPC",
+        "TATAPOWER"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Generics (US market)",
+      "weight": "Largest for most",
+      "driver": "USFDA approvals, USD/INR, pricing pressure"
+    },
+    {
+      "name": "Domestic branded generics",
+      "driver": "India pharma market growth"
+    },
+    {
+      "name": "Active Pharmaceuticals (API sales)"
+    },
+    {
+      "name": "Specialty and complex generics"
+    },
+    {
+      "name": "Hospital / institutional supply",
+      "fno": [
+        "APOLLOHOSP",
+        "FORTIS",
+        "MAXHEALTH"
+      ]
+    }
+  ]
+}

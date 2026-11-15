@@ -1,0 +1,53 @@
+{
+  "sym": "PIIND",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Crude derivatives (naphtha, benzene)",
+      "weight": "High",
+      "driver": "Crude price",
+      "fno": [
+        "RELIANCE",
+        "BPCL"
+      ]
+    },
+    {
+      "name": "Speciality chemicals (intermediates)",
+      "driver": "China supply, anti-dumping"
+    },
+    {
+      "name": "Energy",
+      "fno": [
+        "NTPC",
+        "TATAPOWER"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Agrochemicals",
+      "weight": "Largest for PI/UPL",
+      "driver": "Monsoon, farm income",
+      "fno": [
+        "PIIND",
+        "UPL"
+      ]
+    },
+    {
+      "name": "Specialty chemicals for pharma",
+      "fno": [
+        "SUNPHARMA",
+        "CIPLA"
+      ]
+    },
+    {
+      "name": "Dyes and pigments",
+      "driver": "Textile and paint demand"
+    },
+    {
+      "name": "Fluorochemicals",
+      "driver": "Refrigerant and EV battery demand"
+    }
+  ]
+}

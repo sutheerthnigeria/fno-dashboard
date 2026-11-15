@@ -1,0 +1,23 @@
+{
+  "sym": "GRASIM",
+  "name": "Grasim Industries Ltd.",
+  "what": "Grasim Industries Ltd. operates in the Cement & Construction Materials segment of the Construction Materials sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Construction Materials",
+    "Industry: Cement & Construction Materials",
+    "Market cap: Large Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}

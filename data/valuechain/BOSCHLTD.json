@@ -1,0 +1,54 @@
+{
+  "sym": "BOSCHLTD",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Steel / aluminium",
+      "weight": "High",
+      "fno": [
+        "TATASTEEL",
+        "JSWSTEEL",
+        "HINDALCO"
+      ]
+    },
+    {
+      "name": "Rubber and polymers",
+      "driver": "Crude, natural rubber",
+      "fno": [
+        "RELIANCE"
+      ]
+    },
+    {
+      "name": "Electronic components",
+      "driver": "Semiconductor supply"
+    },
+    {
+      "name": "Energy",
+      "fno": [
+        "NTPC",
+        "TATAPOWER"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "OEM supply to auto manufacturers",
+      "weight": "Largest",
+      "fno": [
+        "MARUTI",
+        "M_M",
+        "TVSMOTOR",
+        "BAJAJ-AUTO"
+      ]
+    },
+    {
+      "name": "Aftermarket / spare parts",
+      "driver": "Replacement cycle"
+    },
+    {
+      "name": "Exports",
+      "driver": "USD/INR"
+    }
+  ]
+}

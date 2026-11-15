@@ -1,0 +1,23 @@
+{
+  "sym": "PAGEIND",
+  "name": "Page Industries Ltd.",
+  "what": "Page Industries Ltd. operates in the Textile segment of the Textile sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Textile",
+    "Industry: Textile",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}

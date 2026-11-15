@@ -1,0 +1,40 @@
+{
+  "sym": "KEI",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Copper and aluminium",
+      "weight": "High",
+      "driver": "LME copper/aluminium",
+      "fno": [
+        "HINDALCO",
+        "VEDL"
+      ]
+    },
+    {
+      "name": "PVC and polymers",
+      "driver": "Crude, naphtha",
+      "fno": [
+        "RELIANCE"
+      ]
+    },
+    {
+      "name": "Energy"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Wires and cables",
+      "weight": "Largest",
+      "driver": "Infra spend, real estate, industrials"
+    },
+    {
+      "name": "Fast Moving Electrical Goods (FMEG)",
+      "driver": "Consumer discretionary"
+    },
+    {
+      "name": "EPC projects"
+    }
+  ]
+}

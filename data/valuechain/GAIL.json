@@ -1,0 +1,35 @@
+{
+  "sym": "GAIL",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Natural gas sourcing (LNG + domestic)",
+      "weight": "High",
+      "driver": "LNG spot, domestic APM price"
+    },
+    {
+      "name": "Pipeline infrastructure"
+    },
+    {
+      "name": "Energy for compression"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Gas transmission (tolling)",
+      "weight": "Largest",
+      "driver": "Volume throughput, PNGRB tariff"
+    },
+    {
+      "name": "Gas trading margin"
+    },
+    {
+      "name": "Petrochemicals (petchem)",
+      "driver": "LPG and polymer prices"
+    },
+    {
+      "name": "City Gas Distribution (stake in CGDs)"
+    }
+  ]
+}

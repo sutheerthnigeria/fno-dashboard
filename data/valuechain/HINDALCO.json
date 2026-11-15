@@ -1,0 +1,39 @@
+{
+  "sym": "HINDALCO",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Bauxite and alumina",
+      "weight": "High",
+      "driver": "Bauxite availability"
+    },
+    {
+      "name": "Coal and power",
+      "weight": "Very High",
+      "driver": "Power cost per tonne is ~40% of cost",
+      "fno": [
+        "COALINDIA",
+        "NTPC"
+      ]
+    },
+    {
+      "name": "Caustic soda",
+      "driver": "Chlor-alkali prices"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Primary aluminium",
+      "weight": "Largest",
+      "driver": "LME aluminium, China production"
+    },
+    {
+      "name": "Value-added products (rods, sheets, foils)"
+    },
+    {
+      "name": "Copper (Hindalco also smelts copper)",
+      "driver": "LME copper"
+    }
+  ]
+}

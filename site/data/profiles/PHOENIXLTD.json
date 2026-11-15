@@ -1,0 +1,31 @@
+{
+  "sym": "PHOENIXLTD",
+  "name": "The Phoenix Mills Ltd.",
+  "what": "The Phoenix Mills Ltd. operates in the Construction - Real Estate segment of the Realty sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Realty",
+    "Industry: Construction - Real Estate",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Home loan rates",
+      "direction": "negative"
+    },
+    {
+      "factor": "Steel / cement prices",
+      "direction": "negative"
+    },
+    {
+      "factor": "Urban income growth",
+      "direction": "positive"
+    }
+  ]
+}

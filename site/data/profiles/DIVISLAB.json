@@ -1,0 +1,32 @@
+{
+  "sym": "DIVISLAB",
+  "name": "Divi's Laboratories Ltd.",
+  "what": "Divi's Laboratories Ltd. operates in the Pharmaceuticals & Drugs segment of the Healthcare sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Healthcare",
+    "Industry: Pharmaceuticals & Drugs",
+    "Market cap: Large Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "USFDA approvals",
+      "direction": "positive"
+    },
+    {
+      "factor": "USD/INR",
+      "direction": "positive",
+      "note": "US generic revenue"
+    },
+    {
+      "factor": "China API prices",
+      "direction": "negative"
+    }
+  ]
+}

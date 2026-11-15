@@ -36,6 +36,9 @@ jobs:
         run: python pipeline/fetch_nse.py --days ${{ github.event.inputs.days || '10' }}
       - name: Build site data
         run: python pipeline/build.py --prune-raw
+      - name: Fetch NSE news
+        run: python pipeline/fetch_news.py
+        continue-on-error: true
       - name: Commit data
         run: |
           git config user.name "fno-bot"

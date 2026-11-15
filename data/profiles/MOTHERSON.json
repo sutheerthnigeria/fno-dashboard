@@ -1,0 +1,38 @@
+{
+  "sym": "MOTHERSON",
+  "name": "Samvardhana Motherson International Ltd.",
+  "what": "Samvardhana Motherson International Ltd. operates in the Auto Ancillary segment of the Automobile & Ancillaries sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Automobile & Ancillaries",
+    "Industry: Auto Ancillary",
+    "Market cap: Large Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Crude oil price",
+      "direction": "negative",
+      "note": "Fuel cost hurts demand"
+    },
+    {
+      "factor": "Steel price",
+      "direction": "negative",
+      "note": "Input cost"
+    },
+    {
+      "factor": "Monsoon",
+      "direction": "positive",
+      "note": "Rural demand"
+    },
+    {
+      "factor": "Auto loan rates",
+      "direction": "negative"
+    }
+  ]
+}

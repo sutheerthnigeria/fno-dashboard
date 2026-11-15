@@ -1,0 +1,23 @@
+{
+  "sym": "LT",
+  "name": "Larsen & Toubro Ltd.",
+  "what": "Larsen & Toubro Ltd. operates in the Engineering - Construction segment of the Infrastructure sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Infrastructure",
+    "Industry: Engineering - Construction",
+    "Market cap: Large Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}

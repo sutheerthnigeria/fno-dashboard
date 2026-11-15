@@ -1,0 +1,23 @@
+{
+  "sym": "DIXON",
+  "name": "Dixon Technologies (India) Ltd.",
+  "what": "Dixon Technologies (India) Ltd. operates in the Consumer Durables - Electronics segment of the Consumer Durables sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Consumer Durables",
+    "Industry: Consumer Durables - Electronics",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}

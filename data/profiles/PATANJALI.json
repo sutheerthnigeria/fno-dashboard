@@ -1,0 +1,38 @@
+{
+  "sym": "PATANJALI",
+  "name": "Patanjali Foods Ltd.",
+  "what": "Patanjali Foods Ltd. operates in the Edible Oil segment of the Fast Moving Consumer Goods sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Fast Moving Consumer Goods",
+    "Industry: Edible Oil",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Crude oil",
+      "direction": "negative",
+      "note": "Packaging costs"
+    },
+    {
+      "factor": "Agricultural commodities",
+      "direction": "negative",
+      "note": "Input costs"
+    },
+    {
+      "factor": "Monsoon",
+      "direction": "positive",
+      "note": "Rural income"
+    },
+    {
+      "factor": "Inflation",
+      "direction": "mixed"
+    }
+  ]
+}

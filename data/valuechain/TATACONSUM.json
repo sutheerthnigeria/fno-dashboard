@@ -1,0 +1,64 @@
+{
+  "sym": "TATACONSUM",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Agricultural commodities",
+      "weight": "High",
+      "driver": "Monsoon, commodity cycles",
+      "children": [
+        {
+          "name": "Palm oil / edible oils",
+          "driver": "Malaysia CPO price"
+        },
+        {
+          "name": "Wheat and grains"
+        },
+        {
+          "name": "Sugar",
+          "driver": "Domestic sugar price"
+        },
+        {
+          "name": "Milk solids",
+          "driver": "Milk procurement price"
+        }
+      ]
+    },
+    {
+      "name": "Crude derivatives (packaging, chemicals)",
+      "driver": "Crude oil price",
+      "fno": [
+        "RELIANCE"
+      ]
+    },
+    {
+      "name": "Packaging materials",
+      "driver": "Aluminium, paper prices"
+    },
+    {
+      "name": "Advertising and promotion",
+      "weight": "High"
+    },
+    {
+      "name": "Distribution network"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Home care products"
+    },
+    {
+      "name": "Personal care and beauty"
+    },
+    {
+      "name": "Foods and beverages"
+    },
+    {
+      "name": "Nutrition and health"
+    },
+    {
+      "name": "OTC healthcare"
+    }
+  ]
+}

@@ -440,6 +440,18 @@ def main(demo=False):
         vc_index.append(f.stem)
     market["valuechain"] = vc_index
 
+    # business profiles
+    prof_src = ROOT / "data" / "profiles"
+    prof_out = SITE_DATA / "profiles"
+    if prof_out.exists():
+        shutil.rmtree(prof_out)
+    prof_out.mkdir(parents=True)
+    if prof_src.exists():
+        for f in sorted(prof_src.glob("*.json")):
+            shutil.copy(f, prof_out / f.name)
+
+    # news (written by fetch_news.py directly into site/data/news – nothing to copy)
+
     dump(SITE_DATA / "latest.json", latest)
     dump(SITE_DATA / "sectors.json", sectors)
     dump(SITE_DATA / "market.json", market)

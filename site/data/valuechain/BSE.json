@@ -1,0 +1,48 @@
+{
+  "sym": "BSE",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Technology platform",
+      "fno": [
+        "INFY",
+        "TCS",
+        "COFORGE"
+      ]
+    },
+    {
+      "name": "Exchange fees and STT"
+    },
+    {
+      "name": "Employee costs"
+    },
+    {
+      "name": "Clearing and settlement costs"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Broking commissions / fees",
+      "weight": "Largest",
+      "driver": "Market volumes, F&O activity"
+    },
+    {
+      "name": "Asset management fees",
+      "driver": "AUM, equity markets"
+    },
+    {
+      "name": "Distribution commissions",
+      "fno": [
+        "HDFCAMC",
+        "NAM-INDIA"
+      ]
+    },
+    {
+      "name": "Investment banking fees"
+    },
+    {
+      "name": "Margin funding income"
+    }
+  ]
+}

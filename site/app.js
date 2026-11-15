@@ -226,9 +226,11 @@
     const r = S.bySym[sym];
     if (!r) { app.innerHTML = `<div class="card">${esc(sym)} is not in the F&amp;O list for ${esc(S.market.date)}.</div>`; return; }
     app.innerHTML = `<p class="muted pad">Loading ${esc(sym)}…</p>`;
-    let h = null, vc = null;
+    let h = null, vc = null, prof = null, news = null;
     try { h = await getJSON('history/' + fileSym(sym) + '.json'); } catch (e) { }
     if ((S.market.valuechain || []).includes(sym)) { try { vc = await getJSON('valuechain/' + fileSym(sym) + '.json'); } catch (e) { } }
+    try { prof = await getJSON('profiles/' + fileSym(sym) + '.json'); } catch (e) { }
+    try { news = await getJSON('news/' + fileSym(sym) + '.json'); } catch (e) { }
     const se = r.se_oi_trend ? `<span class="muted">StockEdge:</span> ${esc(r.se_oi_trend)}` : '';
     const links = [
       ['NSE', `https://www.nseindia.com/get-quotes/derivatives?symbol=${encodeURIComponent(sym)}`],
@@ -280,15 +282,15 @@
       <h2 style="margin-top:22px">Goods and services</h2>
       <div id="vc"></div>
 
-      <h2 style="margin-top:22px">Coming next for this page</h2>
-      <div class="grid g4">
-        <div class="placeholder"><b>Business profile</b><br>What the company does, segments, revenue mix, key earnings drivers.</div>
-        <div class="placeholder"><b>Financials</b><br>10 years + quarters: margins, ROCE/ROE, cash flow, debt, valuation band.</div>
-        <div class="placeholder"><b>News and filings</b><br>NSE announcements, results dates, corporate actions, tagged news.</div>
-        <div class="placeholder"><b>Macro sensitivity</b><br>Linked commodity / currency prices and how they moved.</div>
-      </div>`;
+      <div id="sec-profile"></div>
+      <div id="sec-news"></div>
+      <div id="sec-macro"></div>
+      <div class="placeholder" style="margin-top:16px"><b>Financials</b> — 10 years + quarters: margins, ROCE/ROE, cash flow, debt, valuation band. Coming soon.</div>`;
     if (h) stockCharts(h);
     renderVC($('#vc'), vc, sym);
+    renderProfile($('#sec-profile'), prof, r);
+    renderNews($('#sec-news'), news, sym);
+    renderMacro($('#sec-macro'), prof);
   }
 
   function stockCharts(h) {
@@ -338,6 +340,82 @@
       <div><h2>Outputs: products and services sold</h2><ul>${vc.outputs.map(node).join('')}</ul></div></div>
       <div class="note">Chips are linked companies; F&amp;O stocks show today's move. Click an item with ▸ to open it.</div></div>`;
     el.querySelectorAll('[data-t]').forEach(n => n.onclick = () => { const u = document.getElementById(n.dataset.t); u.hidden = !u.hidden; n.textContent = (u.hidden ? '▸ ' : '▾ ') + n.textContent.slice(2); });
+  }
+
+  // ---------------------------------------------------------------- business profile
+  function renderProfile(el, prof, r) {
+    if (!prof) {
+      el.innerHTML = `<h2 style="margin-top:22px">Business profile</h2><div class="placeholder">Profile data not yet available. Run the pipeline to generate it.</div>`;
+      return;
+    }
+    const seg = (prof.segments || []).map(s =>
+      `<div class="tile"><div class="k">${esc(s.name)}</div><div class="v">${s.pct_rev != null ? nf(s.pct_rev, 0) + '%' : '—'}</div><div class="s">${esc(s.note || '')}</div></div>`
+    ).join('');
+    const drivers = (prof.earnings_drivers || []).map(d => `<li>${esc(d)}</li>`).join('');
+    el.innerHTML = `
+      <h2 style="margin-top:22px">Business profile</h2>
+      <div class="card">
+        <p style="margin:0 0 12px">${esc(prof.what || '')}</p>
+        ${seg ? `<h3 style="margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-secondary)">Segments</h3><div class="tiles">${seg}</div>` : ''}
+        ${drivers ? `<h3 style="margin:12px 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-secondary)">Key earnings drivers</h3><ul style="margin:0;padding-left:20px;line-height:1.7">${drivers}</ul>` : ''}
+        <div class="note" style="margin-top:10px">Source: pipeline-generated draft. Verify against latest annual report and earnings call.</div>
+      </div>`;
+  }
+
+  // ---------------------------------------------------------------- news / filings
+  function renderNews(el, news, sym) {
+    if (!news || !news.items || news.items.length === 0) {
+      el.innerHTML = `<h2 style="margin-top:22px">News and filings</h2>
+        <div class="placeholder">No recent NSE announcements fetched yet.
+          <div style="margin-top:8px">
+            <a class="chip" href="https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=${encodeURIComponent(sym)}" target="_blank" rel="noopener">NSE Announcements ↗</a>
+            <a class="chip" href="https://www.screener.in/company/${encodeURIComponent(sym)}/consolidated/#documents" target="_blank" rel="noopener">Screener.in filings ↗</a>
+          </div>
+        </div>`;
+      return;
+    }
+    const rows = news.items.slice(0, 15).map(item => {
+      const badge = item.category ? `<span class="chip" style="font-size:11px">${esc(item.category)}</span>` : '';
+      return `<div style="padding:8px 0;border-bottom:1px solid var(--border)">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+          ${badge}
+          <span class="muted" style="font-size:12px">${esc(item.date || '')}</span>
+        </div>
+        <div style="margin-top:3px">${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener" style="color:inherit">${esc(item.title)}</a>` : esc(item.title)}</div>
+      </div>`;
+    }).join('');
+    el.innerHTML = `<h2 style="margin-top:22px">News and filings</h2>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+          <span class="muted">Last fetched: ${esc(news.fetched_on || 'unknown')}</span>
+          <a class="chip" href="https://www.nseindia.com/companies-listing/corporate-filings-announcements?symbol=${encodeURIComponent(sym)}" target="_blank" rel="noopener">All NSE filings ↗</a>
+        </div>
+        ${rows}
+      </div>`;
+  }
+
+  // ---------------------------------------------------------------- macro sensitivity
+  function renderMacro(el, prof) {
+    if (!prof || !prof.macro_sensitivity || prof.macro_sensitivity.length === 0) {
+      el.innerHTML = `<h2 style="margin-top:22px">Macro sensitivity</h2><div class="placeholder">Macro sensitivity data not yet available.</div>`;
+      return;
+    }
+    const dirColor = { positive: 'var(--up)', negative: 'var(--down)', mixed: 'var(--text-secondary)' };
+    const dirIcon  = { positive: '▲', negative: '▼', mixed: '↔' };
+    const rows = prof.macro_sensitivity.map(m => {
+      const col = dirColor[m.direction] || 'var(--text-secondary)';
+      const icon = dirIcon[m.direction] || '↔';
+      return `<div class="tile">
+        <div class="k">${esc(m.factor)}</div>
+        <div class="v" style="color:${col}">${icon} ${esc(m.direction || '')}</div>
+        ${m.note ? `<div class="s">${esc(m.note)}</div>` : ''}
+      </div>`;
+    }).join('');
+    el.innerHTML = `<h2 style="margin-top:22px">Macro sensitivity</h2>
+      <div class="card">
+        <div class="note" style="margin-bottom:10px">How key macro factors affect this stock's earnings. ▲ = higher factor is positive for earnings; ▼ = negative.</div>
+        <div class="tiles">${rows}</div>
+      </div>`;
   }
 
   boot();

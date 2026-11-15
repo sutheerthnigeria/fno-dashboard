@@ -1,0 +1,32 @@
+{
+  "sym": "VMM",
+  "name": "Vishal Mega Mart Ltd.",
+  "what": "Vishal Mega Mart Ltd. operates in the Retailing segment of the Retailing sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Retailing",
+    "Industry: Retailing",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Consumer confidence",
+      "direction": "positive"
+    },
+    {
+      "factor": "Real estate costs",
+      "direction": "negative"
+    },
+    {
+      "factor": "Inflation",
+      "direction": "negative",
+      "note": "Squeezes discretionary spend"
+    }
+  ]
+}

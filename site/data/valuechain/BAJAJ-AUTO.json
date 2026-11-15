@@ -1,0 +1,92 @@
+{
+  "sym": "BAJAJ-AUTO",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Steel and metals",
+      "weight": "High",
+      "driver": "India HRC/CRC, LME aluminium",
+      "fno": [
+        "TATASTEEL",
+        "JSWSTEEL",
+        "SAIL",
+        "HINDALCO"
+      ]
+    },
+    {
+      "name": "Bought-out components",
+      "weight": "High",
+      "driver": "Steel and rubber pass-through",
+      "fno": [
+        "BHARATFORG",
+        "SONACOMS",
+        "BOSCHLTD",
+        "MOTHERSON",
+        "UNOMINDA",
+        "TIINDIA"
+      ]
+    },
+    {
+      "name": "Tyres",
+      "driver": "Natural rubber, crude",
+      "other": [
+        "MRF",
+        "Apollo Tyres",
+        "CEAT"
+      ]
+    },
+    {
+      "name": "Plastics and rubber",
+      "driver": "Crude, naphtha",
+      "fno": [
+        "RELIANCE"
+      ]
+    },
+    {
+      "name": "Electronics and semiconductors",
+      "driver": "Global semicon supply"
+    },
+    {
+      "name": "Energy",
+      "driver": "Gas and power tariffs",
+      "fno": [
+        "GAIL",
+        "NTPC"
+      ]
+    },
+    {
+      "name": "Logistics",
+      "fno": [
+        "CONCOR",
+        "DELHIVERY"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Domestic vehicles",
+      "weight": "Largest",
+      "driver": "Rural income, festive demand, fuel price, loan rates"
+    },
+    {
+      "name": "Exports",
+      "driver": "USD/INR, emerging market demand"
+    },
+    {
+      "name": "Spare parts",
+      "weight": "High margin"
+    },
+    {
+      "name": "Servicing and repairs"
+    },
+    {
+      "name": "Finance / insurance tie-ups",
+      "fno": [
+        "BAJFINANCE",
+        "HDFCBANK",
+        "ICICIGI"
+      ]
+    }
+  ]
+}

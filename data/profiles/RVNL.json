@@ -1,0 +1,23 @@
+{
+  "sym": "RVNL",
+  "name": "Rail Vikas Nigam Ltd.",
+  "what": "Rail Vikas Nigam Ltd. operates in the Engineering - Construction segment of the Infrastructure sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Infrastructure",
+    "Industry: Engineering - Construction",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}

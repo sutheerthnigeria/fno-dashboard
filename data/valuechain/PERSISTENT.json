@@ -1,0 +1,61 @@
+{
+  "sym": "PERSISTENT",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Employees (talent)",
+      "weight": "Highest",
+      "driver": "Wage inflation, attrition, tier-1 campus hiring"
+    },
+    {
+      "name": "Cloud and infrastructure",
+      "driver": "USD cost",
+      "other": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "name": "Software licences and tools"
+    },
+    {
+      "name": "Office space / facilities"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "IT services and outsourcing",
+      "weight": "Largest",
+      "driver": "USD/INR, global IT spend",
+      "children": [
+        {
+          "name": "BFSI vertical"
+        },
+        {
+          "name": "Retail and CPG"
+        },
+        {
+          "name": "Manufacturing"
+        },
+        {
+          "name": "Healthcare"
+        },
+        {
+          "name": "Energy and utilities"
+        }
+      ]
+    },
+    {
+      "name": "Digital / cloud projects",
+      "driver": "Enterprise digital budgets"
+    },
+    {
+      "name": "Products and platforms"
+    },
+    {
+      "name": "BPO / BPS"
+    }
+  ]
+}

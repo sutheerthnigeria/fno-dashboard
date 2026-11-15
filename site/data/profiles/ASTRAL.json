@@ -1,0 +1,23 @@
+{
+  "sym": "ASTRAL",
+  "name": "Astral Ltd.",
+  "what": "Astral Ltd. operates in the Plastic Products segment of the Plastic Products sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Plastic Products",
+    "Industry: Plastic Products",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}

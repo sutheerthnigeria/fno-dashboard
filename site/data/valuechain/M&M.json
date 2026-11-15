@@ -1,0 +1,33 @@
+{
+  "sym": "M&M",
+  "status": "draft",
+  "note": "Generic template for Automobile & Ancillaries / Automobiles - Passenger Cars. Needs detail from annual report and earnings calls.",
+  "inputs": [
+    {
+      "name": "Key raw materials / inputs",
+      "driver": "Sector-specific commodity and FX drivers"
+    },
+    {
+      "name": "Employee and operating costs"
+    },
+    {
+      "name": "Technology and capex",
+      "driver": "Interest rates, project finance"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Primary products / services",
+      "weight": "Largest",
+      "driver": "End-market demand, pricing power"
+    },
+    {
+      "name": "Value-added / premium products",
+      "driver": "Mix improvement"
+    },
+    {
+      "name": "Exports",
+      "driver": "USD/INR, global demand"
+    }
+  ]
+}

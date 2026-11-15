@@ -1,0 +1,81 @@
+{
+  "sym": "ETERNAL",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Merchandise procurement",
+      "weight": "High",
+      "driver": "Category mix, supplier terms",
+      "children": [
+        {
+          "name": "Apparel and textiles",
+          "driver": "Cotton prices"
+        },
+        {
+          "name": "FMCG packaged goods",
+          "fno": [
+            "HINDUNILVR",
+            "ITC",
+            "BRITANNIA"
+          ]
+        },
+        {
+          "name": "Electronics",
+          "fno": [
+            "DIXON",
+            "AMBER"
+          ]
+        },
+        {
+          "name": "General merchandise"
+        }
+      ]
+    },
+    {
+      "name": "Store rentals",
+      "driver": "Real estate costs",
+      "fno": [
+        "DLF",
+        "PHOENIXLTD"
+      ]
+    },
+    {
+      "name": "Logistics",
+      "fno": [
+        "DELHIVERY",
+        "CONCOR"
+      ]
+    },
+    {
+      "name": "Employee costs"
+    },
+    {
+      "name": "Technology (ERP, e-comm)",
+      "fno": [
+        "INFY",
+        "TCS"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Offline store sales",
+      "weight": "Largest"
+    },
+    {
+      "name": "Private label brands",
+      "weight": "High margin"
+    },
+    {
+      "name": "E-commerce / quick commerce"
+    },
+    {
+      "name": "Financial services (cards, EMI)",
+      "fno": [
+        "BAJFINANCE",
+        "SBICARD"
+      ]
+    }
+  ]
+}

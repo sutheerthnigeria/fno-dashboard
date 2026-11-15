@@ -1,0 +1,23 @@
+{
+  "sym": "KALYANKJIL",
+  "name": "Kalyan Jewellers India Ltd.",
+  "what": "Kalyan Jewellers India Ltd. operates in the Diamond & Jewellery segment of the Diamond & Jewellery sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Diamond & Jewellery",
+    "Industry: Diamond & Jewellery",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}

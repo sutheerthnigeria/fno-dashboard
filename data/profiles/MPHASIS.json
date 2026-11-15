@@ -1,0 +1,32 @@
+{
+  "sym": "MPHASIS",
+  "name": "Mphasis Ltd.",
+  "what": "Mphasis Ltd. operates in the IT - Software segment of the Information Technology sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Information Technology",
+    "Industry: IT - Software",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "USD/INR",
+      "direction": "positive",
+      "note": "Revenue in USD"
+    },
+    {
+      "factor": "US IT spend",
+      "direction": "positive"
+    },
+    {
+      "factor": "US recession risk",
+      "direction": "negative"
+    }
+  ]
+}

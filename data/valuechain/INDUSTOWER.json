@@ -1,0 +1,55 @@
+{
+  "sym": "INDUSTOWER",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Spectrum fees and AGR dues"
+    },
+    {
+      "name": "Network equipment capex",
+      "driver": "USD/INR on imports",
+      "other": [
+        "Ericsson",
+        "Nokia",
+        "Samsung"
+      ]
+    },
+    {
+      "name": "Power and energy",
+      "weight": "High",
+      "fno": [
+        "NTPC",
+        "TATAPOWER"
+      ]
+    },
+    {
+      "name": "Tower rental",
+      "fno": [
+        "INDUSTOWER"
+      ]
+    },
+    {
+      "name": "Content and OTT deals"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Mobile data subscriptions",
+      "weight": "Largest",
+      "driver": "ARPU, subscriber adds, 5G monetisation"
+    },
+    {
+      "name": "Voice and SMS"
+    },
+    {
+      "name": "Enterprise connectivity"
+    },
+    {
+      "name": "Homes broadband (Jio/Airtel)"
+    },
+    {
+      "name": "Digital services and OTT"
+    }
+  ]
+}

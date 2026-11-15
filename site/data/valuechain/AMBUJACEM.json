@@ -1,0 +1,49 @@
+{
+  "sym": "AMBUJACEM",
+  "status": "draft",
+  "note": "Draft \u2013 verify against annual reports and earnings calls.",
+  "inputs": [
+    {
+      "name": "Limestone (captive quarry)",
+      "weight": "Medium"
+    },
+    {
+      "name": "Coal and pet coke",
+      "weight": "High",
+      "driver": "Global coal price",
+      "fno": [
+        "COALINDIA"
+      ]
+    },
+    {
+      "name": "Power and fuel",
+      "weight": "High",
+      "driver": "Power tariff, solar capex"
+    },
+    {
+      "name": "Logistics",
+      "weight": "Medium",
+      "driver": "Diesel price",
+      "fno": [
+        "CONCOR"
+      ]
+    },
+    {
+      "name": "Fly ash and slag",
+      "driver": "Proximity to thermal plants"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Cement (OPC, PPC, PSC)",
+      "weight": "Largest",
+      "driver": "Infrastructure and housing activity, regional pricing"
+    },
+    {
+      "name": "Ready-mix concrete"
+    },
+    {
+      "name": "Building products"
+    }
+  ]
+}

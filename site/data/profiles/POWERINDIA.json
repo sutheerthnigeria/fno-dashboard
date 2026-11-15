@@ -1,0 +1,33 @@
+{
+  "sym": "POWERINDIA",
+  "name": "Hitachi Energy India Ltd.",
+  "what": "Hitachi Energy India Ltd. operates in the Electric Equipment segment of the Capital Goods sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Capital Goods",
+    "Industry: Electric Equipment",
+    "Market cap: Large Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Govt capex budget",
+      "direction": "positive"
+    },
+    {
+      "factor": "Steel / commodity prices",
+      "direction": "negative",
+      "note": "Input cost"
+    },
+    {
+      "factor": "Interest rates",
+      "direction": "negative",
+      "note": "Project financing"
+    }
+  ]
+}

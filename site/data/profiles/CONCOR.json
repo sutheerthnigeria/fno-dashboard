@@ -1,0 +1,23 @@
+{
+  "sym": "CONCOR",
+  "name": "Container Corporation Of India Ltd.",
+  "what": "Container Corporation Of India Ltd. operates in the Logistics segment of the Logistics sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Logistics",
+    "Industry: Logistics",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}

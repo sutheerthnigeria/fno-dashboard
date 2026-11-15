@@ -1,0 +1,23 @@
+{
+  "sym": "SHREECEM",
+  "name": "Shree Cement Ltd.",
+  "what": "Shree Cement Ltd. operates in the Cement & Construction Materials segment of the Construction Materials sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Construction Materials",
+    "Industry: Cement & Construction Materials",
+    "Market cap: Mid Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}

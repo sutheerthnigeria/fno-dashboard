@@ -1,0 +1,23 @@
+{
+  "sym": "HINDALCO",
+  "name": "Hindalco Industries Ltd.",
+  "what": "Hindalco Industries Ltd. operates in the Metal - Non Ferrous segment of the Non - Ferrous Metals sector.",
+  "segments": [
+    {
+      "name": "Primary business",
+      "note": "See annual report for revenue breakdown by segment."
+    }
+  ],
+  "earnings_drivers": [
+    "Sector: Non - Ferrous Metals",
+    "Industry: Metal - Non Ferrous",
+    "Market cap: Large Cap",
+    "Key drivers to be populated from latest earnings call and annual report."
+  ],
+  "macro_sensitivity": [
+    {
+      "factor": "Key sector drivers",
+      "direction": "mixed"
+    }
+  ]
+}
