@@ -22,6 +22,52 @@
   const trendColor = t => css(TREND_VAR[baseTrend(t)] || '--neutral');
   const trendBadge = t => t ? `<span class="badge"><span class="dot" style="background:${trendColor(t)}"></span>${esc(t)}</span>` : '<span class="muted">–</span>';
 
+  // ---- watchlist (localStorage) ----
+  const WL_KEY = 'fno_watchlist';
+  const wlGet = () => { try { return JSON.parse(localStorage.getItem(WL_KEY) || '[]'); } catch (e) { return []; } };
+  const wlSet = arr => { try { localStorage.setItem(WL_KEY, JSON.stringify(arr)); } catch (e) { } };
+  const wlToggle = sym => { const a = wlGet(); const i = a.indexOf(sym); if (i >= 0) a.splice(i, 1); else a.push(sym); wlSet(a); };
+  const wlHas = sym => wlGet().includes(sym);
+  const starBtn = sym => `<button class="star${wlHas(sym) ? ' on' : ''}" data-wl="${esc(sym)}" title="${wlHas(sym) ? 'Remove from watchlist' : 'Add to watchlist'}">${wlHas(sym) ? '★' : '☆'}</button>`;
+
+  // ---- ban list helper ----
+  const isBanned = sym => (S.market.banned || []).includes(sym);
+  const banBadge = sym => isBanned(sym) ? '<span class="ban-badge" title="F&amp;O ban: stock is in F&amp;O ban list (OI &gt; 95% of MWPL). No new positions allowed.">⛔ BAN</span>' : '';
+
+  // ---- OI streak badge ----
+  const streakBadge = r => {
+    if (!r.oi_streak || r.oi_streak < 2) return '';
+    const t = baseTrend(r.oi_trend);
+    const abbr = { 'Long Buildup': 'LB', 'Short Buildup': 'SB', 'Short Covering': 'SC', 'Long Unwinding': 'LU', 'Neutral': 'N' }[t] || t.slice(0, 2);
+    return `<span class="streak-badge" style="background:${trendColor(r.oi_trend)}22;color:${trendColor(r.oi_trend)};border:1px solid ${trendColor(r.oi_trend)}44" title="${t} for ${r.oi_streak} consecutive days">${abbr}×${r.oi_streak}</span>`;
+  };
+
+  // ---- tile tooltips ----
+  const TILE_TIPS = {
+    'Futures OI': 'Total open contracts in futures. Rising OI = new positions being created.',
+    'OI value': 'Futures OI × CMP, in crore rupees. Proxy for institutional interest.',
+    'PCR (OI)': 'Put/Call ratio by OI. >1.2 = more put OI = market hedged/bearish; <0.7 = complacency zone.',
+    'Rollover': 'Share of OI beyond the near-month expiry. High = traders carried positions forward.',
+    'Basis': 'Near-month future price minus spot, as %. Positive = contango (normal); negative = backwardation.',
+    'Max pain': 'Strike where option sellers (writers) lose the least. Often acts as a magnet near expiry.',
+    'Highest call OI': 'Strike with the highest call OI. Often acts as near-term resistance.',
+    'Highest put OI': 'Strike with the highest put OI. Often acts as near-term support.',
+    'Expiry': 'Days left to the near-month contract expiry.',
+    'Volume': 'Today\'s volume vs its 20-day average. ≥2× = unusually active day.',
+    'Delivery': 'Delivery % = shares delivered vs traded. High delivery + big move = conviction.',
+    '1 week': 'Price return over the last 5 trading days.',
+    '1 month': 'Price return over the last 21 trading days.',
+    '3 months': 'Price return over the last 63 trading days.',
+    '6 months': 'Price return over the last 126 trading days.',
+    '1 year': 'Price return over the last 252 trading days.',
+    'RSI (14)': 'Relative Strength Index over 14 days. >70 = overbought; <30 = oversold; 50 = neutral.',
+    'Volatility (20D, ann.)': 'Realised (historical) volatility over 20 days, annualised. High = wider options premiums.',
+    'Beta vs Nifty (120D)': 'Sensitivity to Nifty movement over 120 days. Beta 1.5 = moves ~1.5× Nifty.',
+    'From 52W high': '% distance from the 52-week high. Negative means below the high.',
+    'From 52W low': '% gain from the 52-week low.',
+    '50 / 200-DMA': 'Whether price is above or below the 50-day and 200-day moving averages.',
+  };
+
   function divColor(v, lim = 4) { // diverging: down(red) – gray – up(blue)
     const t = Math.max(-1, Math.min(1, (v || 0) / lim));
     const a = hex(css('--mid')), b = hex(t >= 0 ? css('--up') : css('--down'));
@@ -72,6 +118,8 @@
     if (page === 'screener') return screenerPage(app);
     if (page === 'sectors') return sectorsPage(app);
     if (page === 'sector' && arg) return sectorPage(app, decodeURIComponent(arg));
+    if (page === 'watchlist') return watchlistPage(app);
+    if (page === 'expiry') return expiryPage(app);
     return marketPage(app);
   }
 
@@ -145,10 +193,12 @@
 
   // ---------------------------------------------------------------- screener
   const COLS = [
-    ['sym', 'Stock', r => `<a href="#/stock/${encodeURIComponent(r.sym)}">${esc(r.sym)}</a>`, 'l'],
+    ['sym', 'Stock', r => `<a href="#/stock/${encodeURIComponent(r.sym)}">${esc(r.sym)}</a>${banBadge(r.sym)}`, 'l'],
+    ['_wl', '★', r => starBtn(r.sym), 'l'],
     ['sector', 'Sector', r => esc(r.sector), 'l'],
     ['close', 'Close', r => nf(r.close)], ['chg', 'Chg', r => pct(r.chg)],
-    ['oi_chg', 'OI chg', r => pct(r.oi_chg)], ['oi_trend', 'OI trend', r => trendBadge(r.oi_trend), 'l'],
+    ['oi_chg', 'OI chg', r => pct(r.oi_chg)],
+    ['oi_trend', 'OI trend', r => `${trendBadge(r.oi_trend)}${streakBadge(r)}`, 'l'],
     ['se_oi_trend', 'StockEdge trend', r => esc(r.se_oi_trend || '–'), 'l'],
     ['pcr', 'PCR', r => nf(r.pcr)], ['vol_mult', 'Vol ×', r => mult(r.vol_mult)],
     ['deliv_pct', 'Deliv %', r => r.deliv_pct == null ? '–' : nf(r.deliv_pct, 1)], ['deliv_mult', 'Deliv ×', r => mult(r.deliv_mult)],
@@ -165,19 +215,24 @@
         <input id="f-q" placeholder="Filter by name…">
         <select id="f-sec"><option value="">All sectors</option>${secs.map(s => `<option ${preset.sector === s ? 'selected' : ''}>${esc(s)}</option>`).join('')}</select>
         <select id="f-tr"><option value="">All OI trends</option>${TRENDS.map(t => `<option>${t}</option>`).join('')}</select>
-        <button data-f="sma50">Above 50-DMA</button><button data-f="vol">Volume ≥ 2×</button><button data-f="deliv">Delivery ≥ 1.5×</button><button data-f="agg">Aggressive only</button>
+        <button data-f="sma50">Above 50-DMA</button><button data-f="vol">Volume ≥ 2×</button><button data-f="deliv">Delivery ≥ 1.5×</button><button data-f="agg">Aggressive only</button><button data-f="ban">⛔ Ban list</button><button data-f="wl">★ Watchlist</button>
         <span class="muted" id="f-n"></span><button id="f-csv">Download CSV</button>
       </div><div class="card"><div class="tablewrap" id="tbl"></div></div>`;
     const st = { sort: 'oi_chg', dir: -1, on: {} };
     const draw = () => {
       const q = $('#f-q').value.toLowerCase(), sec = $('#f-sec').value, tr = $('#f-tr').value;
       let rows = S.latest.filter(r => (!q || (r.sym + ' ' + r.name).toLowerCase().includes(q)) && (!sec || r.sector === sec) && (!tr || baseTrend(r.oi_trend) === tr)
-        && (!st.on.sma50 || r.above_sma50) && (!st.on.vol || r.vol_mult >= 2) && (!st.on.deliv || r.deliv_mult >= 1.5) && (!st.on.agg || (r.oi_trend || '').startsWith('Agg')));
+        && (!st.on.sma50 || r.above_sma50) && (!st.on.vol || r.vol_mult >= 2) && (!st.on.deliv || r.deliv_mult >= 1.5) && (!st.on.agg || (r.oi_trend || '').startsWith('Agg'))
+        && (!st.on.ban || isBanned(r.sym)) && (!st.on.wl || wlHas(r.sym)));
       rows.sort((a, b) => { const x = a[st.sort], y = b[st.sort]; if (x == null) return 1; if (y == null) return -1; return (x > y ? 1 : x < y ? -1 : 0) * st.dir; });
       S.view = rows;
       $('#f-n').textContent = rows.length + ' stocks';
       $('#tbl').innerHTML = `<table><thead><tr>${COLS.map(c => `<th class="${c[3] || ''}" data-k="${c[0]}">${c[1]}${st.sort === c[0] ? (st.dir > 0 ? ' ↑' : ' ↓') : ''}</th>`).join('')}</tr></thead><tbody>${rows.map(r => `<tr>${COLS.map(c => `<td class="${c[3] || ''}">${c[2](r)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
-      $('#tbl').querySelectorAll('th').forEach(th => th.onclick = () => { const k = th.dataset.k; st.dir = st.sort === k ? -st.dir : -1; st.sort = k; draw(); });
+      $('#tbl').querySelectorAll('th[data-k]:not([data-k="_wl"])').forEach(th => th.onclick = () => { const k = th.dataset.k; st.dir = st.sort === k ? -st.dir : -1; st.sort = k; draw(); });
+      // wire up star buttons in table
+      $('#tbl').querySelectorAll('[data-wl]').forEach(btn => btn.onclick = (e) => {
+        e.preventDefault(); wlToggle(btn.dataset.wl); draw(); // redraw to update star state
+      });
     };
     ['f-q', 'f-sec', 'f-tr'].forEach(id => $('#' + id).addEventListener('input', draw));
     app.querySelectorAll('[data-f]').forEach(b => b.onclick = () => { st.on[b.dataset.f] = !st.on[b.dataset.f]; b.classList.toggle('on'); draw(); });
@@ -232,18 +287,20 @@
     try { prof = await getJSON('profiles/' + fileSym(sym) + '.json'); } catch (e) { }
     try { news = await getJSON('news/' + fileSym(sym) + '.json'); } catch (e) { }
     const se = r.se_oi_trend ? `<span class="muted">StockEdge:</span> ${esc(r.se_oi_trend)}` : '';
+    const banned = isBanned(sym);
     const links = [
       ['NSE', `https://www.nseindia.com/get-quotes/derivatives?symbol=${encodeURIComponent(sym)}`],
       ['Screener.in', `https://www.screener.in/company/${encodeURIComponent(sym)}/consolidated/`],
       ['StockEdge', `https://web.stockedge.com/app/markets`],
       ['TradingView', `https://www.tradingview.com/chart/?symbol=NSE:${encodeURIComponent(sym)}`],
     ];
-    const tile = (k, v, s = '') => `<div class="tile"><div class="k">${k}</div><div class="v">${v}</div>${s ? `<div class="s">${s}</div>` : ''}</div>`;
+    const tile = (k, v, s = '') => { const tip = TILE_TIPS[k]; return `<div class="tile"${tip ? ` title="${esc(tip)}"` : ''}><div class="k">${k}${tip ? ' <span class="tip-icon">?</span>' : ''}</div><div class="v">${v}</div>${s ? `<div class="s">${s}</div>` : ''}</div>`; };
     app.innerHTML = `
       <div class="row spread"><div>
         <div class="muted"><a href="#/sector/${encodeURIComponent(r.sector)}">${esc(r.sector)}</a> · ${esc(r.industry || '')} · ${esc(r.mcap_cat || '')} · lot ${ni(r.lot)}</div>
-        <h1>${esc(r.name)} <span class="muted" style="font-weight:400">${esc(sym)}</span></h1>
-        <div class="row"><span style="font-size:24px;font-weight:600">₹${nf(r.close)}</span> ${pct(r.chg)} ${trendBadge(r.oi_trend)} ${se}</div>
+        <h1>${esc(r.name)} <span class="muted" style="font-weight:400">${esc(sym)}</span> ${starBtn(sym)}</h1>
+        ${banned ? `<div class="ban-warn">⛔ <b>F&amp;O Ban:</b> This stock is on the NSE F&amp;O ban list (OI exceeded 95% of MWPL). No new positions may be opened. Existing positions can be squared off only.</div>` : ''}
+        <div class="row">${streakBadge(r)}<span style="font-size:24px;font-weight:600">₹${nf(r.close)}</span> ${pct(r.chg)} ${trendBadge(r.oi_trend)} ${se}</div>
       </div><div class="row">${links.map(([t, u]) => `<a class="chip" href="${u}" target="_blank" rel="noopener">${t} ↗</a>`).join('')}</div></div>
 
       <h2 style="margin-top:18px">Derivatives</h2>
@@ -270,6 +327,13 @@
         ${tile('From 52W high', pct(r.dist_hi52, 1))}${tile('From 52W low', pct(r.dist_lo52, 1))}
         ${tile('50 / 200-DMA', `${r.above_sma50 == null ? '–' : r.above_sma50 ? 'Above' : 'Below'} / ${r.above_sma200 == null ? '–' : r.above_sma200 ? 'Above' : 'Below'}`)}
       </div>
+      ${r.hi52 != null && r.lo52 != null ? `<div class="card" style="margin-top:12px;padding:12px 16px">
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--text-secondary);margin-bottom:4px">
+          <span>52W Low ₹${nf(r.lo52)}</span><span style="font-weight:600;color:var(--text-primary)">₹${nf(r.close)}</span><span>52W High ₹${nf(r.hi52)}</span>
+        </div>
+        <div class="range-bar"><div class="range-fill" style="left:0;width:${((r.close - r.lo52) / (r.hi52 - r.lo52) * 100).toFixed(1)}%"></div><div class="range-thumb" style="left:${((r.close - r.lo52) / (r.hi52 - r.lo52) * 100).toFixed(1)}%"></div></div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:5px">Current price sits at ${((r.close - r.lo52) / (r.hi52 - r.lo52) * 100).toFixed(0)}% of the 52-week range</div>
+      </div>` : ''}
 
       ${h ? `<div class="card" style="margin-top:16px"><div class="row spread"><h2>Price</h2><div class="row" id="rng">${['3M', '6M', '1Y', 'All'].map((x, i) => `<button data-r="${x}" class="${i === 1 ? 'on' : ''}">${x}</button>`).join('')}</div></div><div id="c-price" class="chart"></div></div>
       <div class="grid g2" style="margin-top:16px">
@@ -291,6 +355,13 @@
     renderProfile($('#sec-profile'), prof, r);
     renderNews($('#sec-news'), news, sym);
     renderMacro($('#sec-macro'), prof);
+    // watchlist star interaction
+    app.querySelectorAll('[data-wl]').forEach(btn => btn.onclick = (e) => {
+      e.preventDefault(); wlToggle(btn.dataset.wl);
+      btn.textContent = wlHas(btn.dataset.wl) ? '★' : '☆';
+      btn.classList.toggle('on', wlHas(btn.dataset.wl));
+      btn.title = wlHas(btn.dataset.wl) ? 'Remove from watchlist' : 'Add to watchlist';
+    });
   }
 
   function stockCharts(h) {
@@ -416,6 +487,74 @@
         <div class="note" style="margin-bottom:10px">How key macro factors affect this stock's earnings. ▲ = higher factor is positive for earnings; ▼ = negative.</div>
         <div class="tiles">${rows}</div>
       </div>`;
+  }
+
+  // ---------------------------------------------------------------- watchlist page
+  function watchlistPage(app) {
+    const wl = wlGet();
+    if (wl.length === 0) {
+      app.innerHTML = `<h1>★ Watchlist</h1><div class="card"><p class="muted" style="margin:0">Your watchlist is empty. Click the ☆ star on any stock to add it here.</p></div>`;
+      return;
+    }
+    const rows = wl.map(sym => S.bySym[sym]).filter(Boolean);
+    const missing = wl.filter(sym => !S.bySym[sym]);
+    app.innerHTML = `<h1>★ Watchlist</h1><div class="muted" style="margin-bottom:10px">${rows.length} stocks · saved in your browser · ${esc(S.market.date)}</div>
+      <div class="card"><div class="tablewrap" id="wl-tbl"></div></div>
+      ${missing.length ? `<div class="note" style="margin-top:8px">Not in today's F&amp;O list: ${missing.map(esc).join(', ')}</div>` : ''}`;
+    const cols = [
+      ['sym', 'Stock', r => `<a href="#/stock/${encodeURIComponent(r.sym)}">${esc(r.sym)}</a>${banBadge(r.sym)}`, 'l'],
+      ['_rm', '✕', r => `<button class="star on" data-wl="${esc(r.sym)}" title="Remove from watchlist" style="color:var(--down)">✕</button>`, 'l'],
+      ['close', 'Close', r => nf(r.close)], ['chg', 'Chg', r => pct(r.chg)],
+      ['oi_chg', 'OI chg', r => pct(r.oi_chg)],
+      ['oi_trend', 'OI trend', r => `${trendBadge(r.oi_trend)}${streakBadge(r)}`, 'l'],
+      ['pcr', 'PCR', r => nf(r.pcr)], ['vol_mult', 'Vol ×', r => mult(r.vol_mult)],
+      ['roll', 'Rollover %', r => r.roll == null ? '–' : nf(r.roll, 1)],
+      ['r_1w', '1W', r => pct(r.r_1w, 1)], ['r_1m', '1M', r => pct(r.r_1m, 1)],
+      ['rsi', 'RSI', r => nf(r.rsi, 0)], ['dist_hi52', 'From 52W high', r => pct(r.dist_hi52, 1)],
+    ];
+    const redraw = () => {
+      const wlNow = wlGet();
+      const rr = wlNow.map(s => S.bySym[s]).filter(Boolean);
+      $('#wl-tbl').innerHTML = `<table><thead><tr>${cols.map(c => `<th class="${c[3] || ''}">${c[1]}</th>`).join('')}</tr></thead><tbody>${rr.map(r => `<tr>${cols.map(c => `<td class="${c[3] || ''}">${c[2](r)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+      $('#wl-tbl').querySelectorAll('[data-wl]').forEach(btn => btn.onclick = (e) => { e.preventDefault(); wlToggle(btn.dataset.wl); redraw(); });
+      if (wlNow.length === 0) watchlistPage(app);
+    };
+    redraw();
+  }
+
+  // ---------------------------------------------------------------- expiry / rollover cross-section
+  function expiryPage(app) {
+    const rows = S.latest.filter(r => r.roll != null).slice();
+    // sector median rollover
+    const secMed = {};
+    S.sectors.forEach(s => { secMed[s.sector] = s.syms ? (() => { const vals = s.syms.map(sym => S.bySym[sym]?.roll).filter(v => v != null); vals.sort((a, b) => a - b); const m = Math.floor(vals.length / 2); return vals.length ? (vals.length % 2 ? vals[m] : (vals[m - 1] + vals[m]) / 2) : null; })() : null; });
+    rows.sort((a, b) => (b.roll || 0) - (a.roll || 0));
+    const allRolls = rows.map(r => r.roll);
+    const p75 = allRolls[Math.floor(allRolls.length * 0.25)]; // sorted desc so 25% from top = 75th pctile
+    const p25 = allRolls[Math.floor(allRolls.length * 0.75)];
+    const expiryDate = S.market.expiry || '–';
+    const dte = S.market.dte;
+    app.innerHTML = `<h1>Expiry: Rollover cross-section</h1>
+      <div class="muted" style="margin-bottom:10px">Near expiry: ${esc(expiryDate)}${dte != null ? ` · ${dte} days left` : ''} · Sorted by rollover % (share of OI beyond near month)</div>
+      ${dte != null && dte <= 5 ? `<div class="note" style="margin-bottom:12px">⚠ Expiry week: OI changes are distorted by rollover. High rollover = traders carried positions forward.</div>` : ''}
+      <div class="card"><div class="tablewrap" id="exp-tbl"></div></div>`;
+    const pct2 = v => v == null ? '–' : `${v > 0 ? '+' : ''}${nf(v, 1)}%`;
+    const rollBar = v => v == null ? '' : `<div class="mini-roll" style="--pct:${Math.min(100, v).toFixed(1)}%"></div>`;
+    const vs = (r) => { const med = secMed[r.sector]; if (med == null || r.roll == null) return '<span class="muted">–</span>'; const d = r.roll - med; return `<span class="${d > 2 ? 'up' : d < -2 ? 'down' : ''}">${d > 0 ? '+' : ''}${nf(d, 1)}</span>`; };
+    const rollClass = v => v == null ? '' : v >= p75 ? 'up' : v <= p25 ? 'down' : '';
+    $('#exp-tbl').innerHTML = `<table><thead><tr>
+      <th class="l">Stock</th><th class="l">Sector</th><th>Rollover %</th><th></th><th>vs Sector</th>
+      <th>OI trend</th><th>OI chg</th><th>Close</th><th>Chg</th><th>Expiry</th>
+    </tr></thead><tbody>${rows.map(r => `<tr>
+      <td class="l"><a href="#/stock/${encodeURIComponent(r.sym)}">${esc(r.sym)}</a>${banBadge(r.sym)}</td>
+      <td class="l"><a href="#/sector/${encodeURIComponent(r.sector)}">${esc(r.sector)}</a></td>
+      <td class="${rollClass(r.roll)}">${r.roll == null ? '–' : nf(r.roll, 1) + '%'}</td>
+      <td style="min-width:80px">${rollBar(r.roll)}</td>
+      <td>${vs(r)}</td>
+      <td class="l">${trendBadge(r.oi_trend)}${streakBadge(r)}</td>
+      <td>${pct(r.oi_chg)}</td><td>${nf(r.close)}</td><td>${pct(r.chg)}</td>
+      <td>${r.expiry ? esc(r.expiry.slice(5)) : '–'}</td>
+    </tr>`).join('')}</tbody></table>`;
   }
 
   boot();

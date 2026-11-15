@@ -122,5 +122,47 @@ def main():
         sys.exit(2)
 
 
+BAN_URL = "https://nseindia.com/content/fo/fo_secban.csv"
+BAN_FILE = ROOT / "data" / "banlist.json"
+
+
+def fetch_ban_list(s=None):
+    """Download today's F&O ban list from NSE and save to data/banlist.json.
+
+    Returns list of banned symbols (may be empty on non-trading days).
+    """
+    close_session = False
+    if s is None:
+        s = session()
+        close_session = True
+    banned = []
+    try:
+        r = s.get(BAN_URL, timeout=15)
+        if r.status_code == 200 and r.text.strip():
+            # First non-empty, non-header line contains symbols comma-separated
+            # Format varies: sometimes one per line, sometimes comma-separated list
+            lines = [l.strip() for l in r.text.strip().splitlines() if l.strip()]
+            # Skip header line if it looks like text (contains letters but not like a ticker)
+            for line in lines:
+                parts = [p.strip() for p in line.split(',') if p.strip()]
+                for sym in parts:
+                    # Skip header words
+                    if sym.upper() in ('SYMBOL', 'SCRIP', 'NAME', 'SECURITY') or not sym:
+                        continue
+                    if re.match(r'^[A-Z0-9&\-]{2,20}$', sym.upper()):
+                        banned.append(sym.upper())
+            banned = list(dict.fromkeys(banned))  # deduplicate, preserve order
+    except Exception as e:
+        print(f"Ban list fetch failed: {e}", file=sys.stderr)
+    BAN_FILE.parent.mkdir(parents=True, exist_ok=True)
+    BAN_FILE.write_text(json.dumps({
+        "date": dt.date.today().isoformat(),
+        "banned": banned
+    }))
+    print(f"Ban list: {len(banned)} stocks banned today" if banned else "Ban list: none banned (or fetch failed)")
+    return banned
+
+
 if __name__ == "__main__":
     main()
+    fetch_ban_list()

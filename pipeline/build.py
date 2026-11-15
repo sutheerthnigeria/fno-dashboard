@@ -336,7 +336,8 @@ LATEST_FIELDS = ["sym", "name", "sector", "industry", "mcap_cat", "lot", "close"
                  "oi_chg", "oi_trend", "se_oi_trend", "oi_val_cr", "pcr", "pcr_chg", "vol_mult",
                  "deliv_pct", "deliv_mult", "roll", "basis_pct", "dte", "expiry", "max_pain",
                  "top_ce", "top_pe", "r_1w", "r_1m", "r_3m", "r_6m", "r_1y", "rsi", "rv20",
-                 "beta", "rs_1m", "above_sma50", "above_sma200", "dist_hi52", "dist_lo52"]
+                 "beta", "rs_1m", "above_sma50", "above_sma200", "dist_hi52", "dist_lo52",
+                 "hi52", "lo52", "oi_streak"]
 HIST_FIELDS = ["close", "high", "low", "chg", "fut_oi", "oi_chg", "pcr", "deliv_pct",
                "vol_mult", "roll", "basis_pct", "sma20", "sma50", "sma200", "rsi", "oi_trend"]
 
@@ -381,6 +382,23 @@ def main(demo=False):
     if "hi52" in cur:
         cur["dist_hi52"] = (cur["close"] / cur["hi52"] - 1) * 100
         cur["dist_lo52"] = (cur["close"] / cur["lo52"] - 1) * 100
+
+    # OI streak: consecutive days with the same base OI trend (ignores Agg. prefix)
+    if "oi_trend" in p.columns:
+        def _streak(group):
+            trends = group.sort_values("date")["oi_trend"].fillna("Neutral")
+            base = trends.str.replace("Agg. ", "", regex=False)
+            streak = 1
+            last = base.iloc[-1] if len(base) else "Neutral"
+            for t in reversed(base.tolist()[:-1]):
+                if t == last:
+                    streak += 1
+                else:
+                    break
+            return streak
+        streak_map = {sym: _streak(g) for sym, g in hp.groupby("sym")}
+        cur["oi_streak"] = cur["sym"].map(streak_map)
+
     latest = [{f: clean(r.get(f)) for f in LATEST_FIELDS if f in cur.columns}
               for r in cur.sort_values("sym").to_dict("records")]
 
@@ -428,6 +446,17 @@ def main(demo=False):
               "dte": clean(cur["dte"].min()) if "dte" in cur else None,
               "n_days": len(dates_all), "first_date": dates_all[0].strftime("%Y-%m-%d"),
               "bench": bench}
+
+    # F&O ban list
+    ban_file = ROOT / "data" / "banlist.json"
+    banned_syms = []
+    if ban_file.exists():
+        try:
+            ban_data = json.loads(ban_file.read_text())
+            banned_syms = ban_data.get("banned", [])
+        except Exception:
+            pass
+    market["banned"] = banned_syms
 
     # value chains
     vc_out = SITE_DATA / "valuechain"
