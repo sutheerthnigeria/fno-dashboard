@@ -383,7 +383,18 @@ def main(demo=False):
         cur["dist_hi52"] = (cur["close"] / cur["hi52"] - 1) * 100
         cur["dist_lo52"] = (cur["close"] / cur["lo52"] - 1) * 100
 
+    latest = [{f: clean(r.get(f)) for f in LATEST_FIELDS if f in cur.columns}
+              for r in cur.sort_values("sym").to_dict("records")]
+
+    # per-stock history
+    hist_dir = SITE_DATA / "history"
+    if hist_dir.exists():
+        shutil.rmtree(hist_dir)
+    dates_all = sorted(p["date"].unique())[-HISTORY_DAYS:]
+    hp = p[p["date"].isin(dates_all)]
+
     # OI streak: consecutive days with the same base OI trend (ignores Agg. prefix)
+    # Must come after hp is defined
     if "oi_trend" in p.columns:
         def _streak(group):
             trends = group.sort_values("date")["oi_trend"].fillna("Neutral")
@@ -397,17 +408,9 @@ def main(demo=False):
                     break
             return streak
         streak_map = {sym: _streak(g) for sym, g in hp.groupby("sym")}
-        cur["oi_streak"] = cur["sym"].map(streak_map)
-
-    latest = [{f: clean(r.get(f)) for f in LATEST_FIELDS if f in cur.columns}
-              for r in cur.sort_values("sym").to_dict("records")]
-
-    # per-stock history
-    hist_dir = SITE_DATA / "history"
-    if hist_dir.exists():
-        shutil.rmtree(hist_dir)
-    dates_all = sorted(p["date"].unique())[-HISTORY_DAYS:]
-    hp = p[p["date"].isin(dates_all)]
+        # Patch oi_streak back into the already-built latest list
+        for rec in latest:
+            rec["oi_streak"] = clean(streak_map.get(rec.get("sym"), 1))
     for sym, g in hp.groupby("sym"):
         g = g.sort_values("date")
         h = {"dates": [d.strftime("%Y-%m-%d") for d in g["date"]]}
