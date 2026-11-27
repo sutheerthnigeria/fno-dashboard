@@ -81,6 +81,7 @@ a.chip { color: var(--accent); }
 
 /* ---- OI streak badge ---- */
 .streak-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: 6px; margin-left: 5px; cursor: help; }
+.tv-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 6px; margin-left: 4px; cursor: help; letter-spacing: 0.03em; }
 
 /* ---- watchlist star button ---- */
 .star { background: none; border: none; cursor: pointer; font-size: 15px; color: var(--text-muted); padding: 2px 4px; border-radius: 4px; line-height: 1; }

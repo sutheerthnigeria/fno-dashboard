@@ -34,6 +34,18 @@
   const isBanned = sym => (S.market.banned || []).includes(sym);
   const banBadge = sym => isBanned(sym) ? '<span class="ban-badge" title="F&amp;O ban: stock is in F&amp;O ban list (OI &gt; 95% of MWPL). No new positions allowed.">⛔ BAN</span>' : '';
 
+  // ---- TradingView rating badge ----
+  const TV_COLORS = { StrongBuy: '#16a34a', Buy: '#4ade80', Neutral: '#94a3b8', Sell: '#f97316', StrongSell: '#dc2626' };
+  const TV_ABBR   = { StrongBuy: 'SB', Buy: 'B', Neutral: 'N', Sell: 'S', StrongSell: 'SS' };
+  const tvBadge = r => {
+    const rating = r.tv_rating;
+    if (!rating) return '<span class="muted">–</span>';
+    const c = TV_COLORS[rating] || '#94a3b8';
+    const label = TV_ABBR[rating] || rating;
+    const rec = r.tv_rec != null ? ` (${r.tv_rec > 0 ? '+' : ''}${r.tv_rec.toFixed(2)})` : '';
+    return `<span class="tv-badge" style="background:${c}22;color:${c};border:1px solid ${c}44" title="TradingView: ${rating}${rec}">${label}</span>`;
+  };
+
   // ---- OI streak badge ----
   const streakBadge = r => {
     if (!r.oi_streak || r.oi_streak < 2) return '';
@@ -200,6 +212,7 @@
     ['oi_chg', 'OI chg', r => pct(r.oi_chg)],
     ['oi_trend', 'OI trend', r => `${trendBadge(r.oi_trend)}${streakBadge(r)}`, 'l'],
     ['se_oi_trend', 'StockEdge trend', r => esc(r.se_oi_trend || '–'), 'l'],
+    ['tv_rating', 'TV Signal', r => tvBadge(r), 'l'],
     ['pcr', 'PCR', r => nf(r.pcr)], ['vol_mult', 'Vol ×', r => mult(r.vol_mult)],
     ['deliv_pct', 'Deliv %', r => r.deliv_pct == null ? '–' : nf(r.deliv_pct, 1)], ['deliv_mult', 'Deliv ×', r => mult(r.deliv_mult)],
     ['roll', 'Rollover %', r => r.roll == null ? '–' : nf(r.roll, 1)], ['basis_pct', 'Basis %', r => nf(r.basis_pct)],
@@ -300,7 +313,7 @@
         <div class="muted"><a href="#/sector/${encodeURIComponent(r.sector)}">${esc(r.sector)}</a> · ${esc(r.industry || '')} · ${esc(r.mcap_cat || '')} · lot ${ni(r.lot)}</div>
         <h1>${esc(r.name)} <span class="muted" style="font-weight:400">${esc(sym)}</span> ${starBtn(sym)}</h1>
         ${banned ? `<div class="ban-warn">⛔ <b>F&amp;O Ban:</b> This stock is on the NSE F&amp;O ban list (OI exceeded 95% of MWPL). No new positions may be opened. Existing positions can be squared off only.</div>` : ''}
-        <div class="row">${streakBadge(r)}<span style="font-size:24px;font-weight:600">₹${nf(r.close)}</span> ${pct(r.chg)} ${trendBadge(r.oi_trend)} ${se}</div>
+        <div class="row">${streakBadge(r)}<span style="font-size:24px;font-weight:600">₹${nf(r.close)}</span> ${pct(r.chg)} ${trendBadge(r.oi_trend)} ${tvBadge(r)} ${se}</div>
       </div><div class="row">${links.map(([t, u]) => `<a class="chip" href="${u}" target="_blank" rel="noopener">${t} ↗</a>`).join('')}</div></div>
 
       <h2 style="margin-top:18px">Derivatives</h2>

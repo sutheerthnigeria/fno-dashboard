@@ -337,7 +337,8 @@ LATEST_FIELDS = ["sym", "name", "sector", "industry", "mcap_cat", "lot", "close"
                  "deliv_pct", "deliv_mult", "roll", "basis_pct", "dte", "expiry", "max_pain",
                  "top_ce", "top_pe", "r_1w", "r_1m", "r_3m", "r_6m", "r_1y", "rsi", "rv20",
                  "beta", "rs_1m", "above_sma50", "above_sma200", "dist_hi52", "dist_lo52",
-                 "hi52", "lo52", "oi_streak"]
+                 "hi52", "lo52", "oi_streak",
+                 "tv_rating", "tv_ma", "tv_os", "tv_rec"]
 HIST_FIELDS = ["close", "high", "low", "chg", "fut_oi", "oi_chg", "pcr", "deliv_pct",
                "vol_mult", "roll", "basis_pct", "sma20", "sma50", "sma200", "rsi", "oi_trend"]
 
@@ -449,6 +450,28 @@ def main(demo=False):
               "dte": clean(cur["dte"].min()) if "dte" in cur else None,
               "n_days": len(dates_all), "first_date": dates_all[0].strftime("%Y-%m-%d"),
               "bench": bench}
+
+    # TradingView technicals
+    tv_path = ROOT / "data" / "tv_technicals.json"
+    if tv_path.exists():
+        try:
+            tv = json.loads(tv_path.read_text())
+            tv_map = {}
+            for sym_key, val in tv.items():
+                # Fix any historic double-r typo
+                if "MARrating_1D" in val:
+                    val["MARating_1D"] = val.pop("MARrating_1D")
+                tv_map[sym_key] = {
+                    "tv_rating": val.get("TechRating_1D"),
+                    "tv_ma":     val.get("MARating_1D"),
+                    "tv_os":     val.get("OsRating_1D"),
+                    "tv_rec":    round(float(val["Recommend.All"]), 4) if val.get("Recommend.All") is not None else None,
+                }
+            for rec in latest:
+                tv_fields = tv_map.get(rec["sym"], {})
+                rec.update(tv_fields)
+        except Exception as e:
+            print(f"  Warning: could not merge TV technicals: {e}")
 
     # F&O ban list
     ban_file = ROOT / "data" / "banlist.json"
